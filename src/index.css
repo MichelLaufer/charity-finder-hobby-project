@@ -1,4 +1,5 @@
 body {
+  background: #F5F5F5;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -10,4 +11,381 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+
+/* CharityDetail */
+.activities-title, .need-title, .summary-title  {
+  font-weight: bold;
+}
+
+.detail-highlight {
+  color: darkorange;
+  font-weight: bold;
+  padding: 4px;
+}
+
+.donation-button {
+  background: darkorange;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 8px 0;
+  margin-bottom: 8vh;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-top: 4vh;
+  padding: 14px 20px;
+  width: 200px;
+}
+
+.donation-button:hover {
+  background: lightsalmon;
+}
+
+.donation-container {
+  background: white;
+  border: 1px;
+  font-size: 18px;
+  margin-left: 4vw;
+  width: 80vw;
+}
+
+.donation-description {
+  margin-left: 2vw;
+}
+
+.donation-options {
+  background: orange;
+  color: white;
+  display: flex;
+  font-size: 16px;
+  margin-bottom: 3vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+.funding-raised-of-goal {
+  margin-bottom: 2vh;
+}
+
+.img-and-donation-container {
+  margin-left: 10vw;
+}
+
+.info-container {
+  background: white;
+  border: 1px solid gray;
+  margin-left: 10vw;
+  margin-top: 4vh;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: 1vh;
+  width: 80vw;
+}
+
+.organization-container {
+  background: white;
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4vh;
+  margin-left: 10vw;
+  margin-top: 8vh;
+  padding-bottom: 4vh;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  width: 80vw;
+}
+
+.org-info-title {
+  margin-bottom: 1vh;
+  margin-top: 1vh;
+}
+
+.org-link {
+  color: black;
+  text-decoration: none;
+}
+
+.org-name {
+  color: black;
+  text-decoration: none;
+}
+
+
+.project-detail-background {
+  /* margin-left: 5vw;
+  margin-right: 5vw; */
+  margin-top: 3vh;
+  width: 80vw;
+}
+
+.project-detail-activities, .project-detail-longtermimpact, .project-detail-need {
+  margin-bottom: 3vh;
+  margin-top: 3vh;
+  /* width: 50vw; */
+}
+
+
+.project-detail-org-name {
+  margin-bottom: 6vh;
+  margin-left: 10vw;
+}
+
+.project-detail-title {
+  margin-left: 10vw;
+}
+
+.project-img {
+  width: 80vw;
+}
+
+.usage-container {
+  background: white;
+  border: 1px;
+  font-size: 18px;
+  margin-left: 4vw;
+  width: 80vw;
+}  
+
+
+/* CharityList */
+.charity-card {
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  margin-bottom: 4vh;
+  padding-bottom: 2vh;
+  width: 80vw;
+}
+
+.charity-card-text-container {
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+.charity-list {
+  margin-left: 3vw;
+}
+
+.charity-list-img {
+  width: 80vw;
+}
+
+.funding-highlight {
+  color: darkorange;
+  font-weight: bold;
+}
+
+.main-title {
+  margin-left: 3vw;
+}
+
+.project-summary {
+  display: -webkit-box;
+  margin-bottom: 3vh;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+}
+
+.project-title {
+  font-size: 18px;
+  margin-top: 1vh;
+}
+
+
+/* Loading */
+.loading-icon {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+
+/* Navbar */
+.navbar-header-container {
+  /* align-items: center; */
+  background: #FF8C00;
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  /* justify-content: center;
+  padding: 15px;
+  padding-left: 50px; */
+  @media(min-width: 768px) {
+    flex-direction: row;
+    /* justify-content: space-between;
+    padding-left: 15px; */
+  }
+}
+
+.navbar-header-title {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif, Arial, Helvetica;
+  line-height: 0.7;
+  margin-left: 3vw;
+}
+
+.navbar-header-title a, .subnavbar-item a {
+  color: white;
+  text-decoration: none;
+}
+
+.subnavbar {
+  align-items: baseline;
+  background: orange;
+  color: white;
+  display: flex;
+  height: 50px;
+  /* text-transform: uppercase; */
+}
+
+.subnavbar-item {
+  margin-left: 3vw;
+  margin-top: 2vh;
+}
+
+
+/* ProgressBar */
+.filler {
+  background: lightsalmon;
+  border-radius: inherit;
+  height: 100%;
+  transition: width .2s ease-in;
+}
+
+.progress-bar {
+  border: 1px solid black;
+  border-radius: 50px;
+  height: 20px;
+  margin-top: 2vh;
+  position: relative;
+  width: 50vw;
+}
+
+
+
+/* Searchbar */
+.form-search {
+  background: none;
+  border-radius: 8px;
+  display: block;
+  margin: 10px;
+  margin-bottom: 20px;
+  margin-left: 4vw;
+  max-width: 480px;
+}
+
+.search-line {
+  background: transparent;
+  border: none;
+  color: white;
+  border-bottom: 2px solid #fe5426;
+  font-size: 16px;
+  width: 200px;
+  /* &::placeholder {
+    color: white;
+    font-family: "Raleway", sans-serif;
+  } */
+}
+
+
+
+/* MEDIA QUERIES */
+@media(min-width: 768px) {
+/* Charity Detail */
+.donation-container {
+  width: 30vw;
+}
+.img-and-donation-container {
+  display: flex;
+  margin-left: 0;
+}
+.info-and-usage-wrap {
+  display: flex;
+  flex-direction: row;
+}
+.info-container {
+  margin-left: 0;
+  width: 40vw;
+}
+.organization-container {
+  margin-left: 0;
+  width: 40vw;
+}
+.project-detail-background {
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-top: 3vh;
+  width: 80vw;
+}
+.project-detail-container {
+  display: flex;
+  flex-direction: row;
+}
+.project-detail-org-name {
+  margin-left: 30vw;
+}
+.project-detail-title {
+  margin-left: 20vw;
+}
+.project-img {
+  width: 42vw;
+}
+.usage-container {
+  width: 30vw;
+}
+
+/* Charity List */
+.charity-card {
+  /* border-radius: 10px; */
+  /* box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.568); */
+  margin-bottom: 8vh;
+  width: 30vw;
+}
+.charity-list {
+  display: grid;
+  grid-template-columns: repeat(3,3fr);
+  grid-template-rows: repeat(3,3fr);
+  margin: 0 auto;
+  margin-left: 3vw;
+  padding-left: 0;
+}
+.charity-list-img {
+  width: 30vw;
+}
+
+
+/* Navbar */
+.subnavbar {
+  align-items: center;
+}
+
+
+/* ProgressBar */
+.progress-bar {
+  border: 1px solid black;
+  border-radius: 50px;
+  height: 20px;
+  position: relative;
+  width: 25vw;
+}
+
+/* Searchbar */
+.form-search {
+  margin-bottom: 10px;
+}
+.search-line {
+  width: 250px;
+}
 }
