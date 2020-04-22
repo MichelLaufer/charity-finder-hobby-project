@@ -7,6 +7,7 @@ import { CharityList } from './CharityList'
 import { CharityDetail } from './CharityDetail'
 import { ChildrenProjects } from './ChildrenProjects'
 import { FeaturedProjects } from './FeaturedProjects'
+import { Footer } from './components/Footer'
 import { Navbar } from './Navbar'
 import { OrganizationProjects } from './OrganizationProjects'
 
@@ -31,6 +32,7 @@ export const App = () => {
           <Route exact path="/featured" component={FeaturedProjects} />
           <Route exact path="/organization/:id" component={OrganizationProjects} />
         </Switch>
+        <Footer />
       </BrowserRouter>
     </Provider>
   )

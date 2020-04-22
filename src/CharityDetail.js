@@ -102,7 +102,8 @@ export const CharityDetail = () => {
           </div>
           <div><span className="detail-highlight">Location:</span> {organization.city}, {organization.country}</div>
           <div><span className="detail-highlight">Website:</span> <a className="org-link" href={organization.url} target="_blank" rel="noopener noreferrer">{organization.url}</a></div>
-        </div>
+          <div><span className="detail-highlight">Number of projects:</span> {organization.activeProjects} active, {organization.totalProjects} in total</div>
+          </div>
         </div>
 
         <div className="donation-wrap">
@@ -116,20 +117,22 @@ export const CharityDetail = () => {
             <ProgressBar percentage={(charity.funding/charity.goal)*100} />
             <button className="donation-button">DONATE</button>
           </div>
-        <div className="usage-container">
-          {donationoptions.map((donation) => (
-            <div 
-              className="donation-options"
-              key={donation.id}
-            >
-            <div className="donation-amount">€{donation.amount}</div>
-            <div className="donation-description">{donation.description}</div>
+         
+          <div className="usage-container">
+            {donationoptions.map((donation) => (
+              <div 
+                className="donation-options"
+                key={donation.id}
+              >
+                <div className="donation-amount">€{donation.amount}</div>
+                <div className="donation-description">{donation.description}</div>
+              </div>
+            ))}
+              <button className="favorites-button">Add to favorites</button>
           </div>
-          ))}
         </div>
       </div>
     </div>
-  </div>
   )
 }
 

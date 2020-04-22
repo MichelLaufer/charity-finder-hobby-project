@@ -67,6 +67,22 @@ code {
   margin-right: 1vw;
 }
 
+.favorites-button {
+  background: brown;
+  border: none;
+  /* border-radius: 20px; */
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 8px 0;
+  margin-bottom: 8vh;
+  margin-left: 6vw;
+  margin-right: 6vw;
+  margin-top: 4vh;
+  padding: 14px 20px;
+  width: 200px;
+}
+
 .funding-raised-of-goal {
   margin-bottom: 2vh;
 }
@@ -199,6 +215,17 @@ code {
   font-size: 18px;
   margin-top: 1vh;
 }
+
+
+/* Footer */
+footer {
+  background: darkorange;
+  color: white;
+  height: 12vh;
+  padding-left: 3vw;
+  padding-top: 4vh;
+}
+
 
 
 /* Loading */
