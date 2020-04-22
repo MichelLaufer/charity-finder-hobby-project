@@ -24,6 +24,7 @@ export const CharityDetail = () => {
 
   let req = new Request(url, {
     method: 'GET',
+    mode: 'no-cors',
     headers: newhead
   })
 
