@@ -17,7 +17,6 @@ export const ChildrenProjects = () => {
 
   let req = new Request(url, {
     method: 'GET',
-    mode: 'no-cors',
     headers: newhead
   })
 
