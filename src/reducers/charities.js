@@ -1,9 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { ui } from 'reducers/ui'
 
-// const API_KEY = process.env.REACT_APP_API_KEY
+const API_KEY = process.env.REACT_APP_API_KEY
 
 const initialState = {
-  charities: []
+  charities: [], 
+  url: `https://api.globalgiving.org/api/public/projectservice/all/projects/active.json?api_key=${API_KEY}`
 }
 
 export const charities = createSlice({
@@ -18,10 +20,12 @@ export const charities = createSlice({
 
 export const searchResult = (searchTerm) => {
   return dispatch => {
-    fetch(`https://api.globalgiving.org/api/public/services/search/projects/active.json?api_key=0c3b2ef8-c5f4-488f-9657-00e518a52add`)
+    dispatch(ui.actions.setLoading(true))
+    fetch(`https://api.globalgiving.org/api/public/services/search/projects/active.json?api_key=${API_KEY}&q=${searchTerm}`)
       .then(res => res.json())
       .then(json => {
-        dispatch(charities.actions.setSearchTerm(json.results))
+        dispatch(charities.actions.setSearchTerm(json.projects))
+        dispatch(ui.actions.setLoading(false))
       })
   }
 }

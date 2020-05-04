@@ -115,7 +115,6 @@ export const CharityDetail = () => {
               <span className="detail-highlight">{charity.numberOfDonations}</span> donations, € {charity.remaining} to go
             </div>
             <ProgressBar percentage={(charity.funding/charity.goal)*100} />
-            <button className="donation-button">DONATE</button>
           </div>
          
           <div className="usage-container">
@@ -128,7 +127,15 @@ export const CharityDetail = () => {
                 <div className="donation-description">{donation.description}</div>
               </div>
             ))}
-              <button className="favorites-button">Add to favorites</button>
+          </div>
+
+          <button className="favorites-button">Add to favorites</button>
+
+          <div className="links-container">
+            <h3 className="org-info-title">For more information</h3>
+            <div className="link-item"><span className="link-highlight">Project link</span> <a className="project-link" href={charity.projectLink} target="_blank" rel="noopener noreferrer">{charity.projectLink}</a></div>
+            <div className="link-item"><span className="link-highlight">Progress report</span> <a className="project-link" href={charity.progressReportLink} target="_blank" rel="noopener noreferrer">{charity.progressReportLink}</a></div>
+            <div className="link-item"><span className="link-highlight">Additional documentation</span> <a className="project-link" href={charity.additionalDocumentation} target="_blank" rel="noopener noreferrer">{charity.additionalDocumentation}</a></div>
           </div>
         </div>
       </div>
@@ -136,6 +143,8 @@ export const CharityDetail = () => {
   )
 }
 
+
+// <button className="donation-button">DONATE</button>
 
     // <img 
     //   src={charity.image.imagelink[2]}

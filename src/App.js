@@ -3,6 +3,8 @@ import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { charities } from 'reducers/charities'
+import { ui } from 'reducers/ui'
+import { users } from 'reducers/users'
 import { CharityList } from './CharityList'
 import { CharityDetail } from './CharityDetail'
 import { ChildrenProjects } from './ChildrenProjects'
@@ -12,7 +14,9 @@ import { Navbar } from './Navbar'
 import { OrganizationProjects } from './OrganizationProjects'
 
 const reducer = combineReducers({
-  charities: charities.reducer
+  charities: charities.reducer,
+  ui: ui.reducer,
+  users: users.reducer
 })
 
 const store = configureStore({ reducer })
