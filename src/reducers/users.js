@@ -45,7 +45,7 @@ export const users = createSlice({
 })
 
 
-const url = 'localhost:8080/sessions'
+const url = 'http://localhost:8081/sessions'
 
 
 export const fetchUser = ({ email, password }) => {
@@ -72,7 +72,6 @@ export const fetchUser = ({ email, password }) => {
 
       })
       .catch(err => dispatch(ui.actions.setLoginFailed(true)))
-
   }
 }
 

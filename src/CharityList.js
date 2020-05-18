@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { DropDownList } from './components/DropDownList'
 import { ProgressBar } from './components/ProgressBar'
 
 const API_KEY = process.env.REACT_APP_API_KEY
@@ -11,9 +12,11 @@ export const CharityList = () => {
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(true)
   const searchResult = useSelector(state => state.charities.charities)
-  const url = useSelector(state => state.charities.url)
-
+  const category = useSelector(state => state.charities.chosenCategory)
+  // const url = useSelector(state => state.charities.url)
   // const url = `https://api.globalgiving.org/api/public/projectservice/all/projects/active.json?api_key=${API_KEY}`
+
+  const url = `https://api.globalgiving.org/api/public/projectservice/${category}/projects?api_key=${API_KEY}`
   const newhead = new Headers({
     'Accept': 'application/json',
     'Access-Control-Allow-Origin': '*',
@@ -35,7 +38,7 @@ export const CharityList = () => {
         setCharities(json.projects.project)
       })
     setLoading(false)  
-  }, [])
+  }, [category])
 
   console.log(charities)
 
@@ -60,7 +63,10 @@ export const CharityList = () => {
     <>
     <section>
       <div className="hero-image"></div>
-      <h1 className="main-title">Search for charity projects below</h1>
+      <div className="charity-list-top-wrapper">
+        <h1 className="main-title">Search for charity projects</h1>
+        <DropDownList />
+      </div>
       <section className="charity-list">
         {charitiesResults && charitiesResults.map((charity) => (
           <div 

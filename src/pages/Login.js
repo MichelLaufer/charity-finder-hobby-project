@@ -5,6 +5,7 @@ import { fetchUser } from '../reducers/users'
 
 export const Login = () => {
   const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
   const history = useHistory()
   const dispatch = useDispatch()
   const failed = useSelector(state => state.ui.isLoginFailed)
@@ -46,7 +47,7 @@ export const Login = () => {
         </label>
         {failed && <div className="error-message">Incorrect user and/or password</div>}
 
-        <button type="submit" onClick={handleSubmit}>
+        <button type="submit" onClick={handleSignin}>
           Login
         </button>
         <button type="button" onClick={reDirect}>

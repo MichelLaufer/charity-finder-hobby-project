@@ -14,6 +14,13 @@ code {
 }
 
 
+/* About */
+.about {
+  margin-bottom: 6vh;
+  margin-left: 3vw;
+  margin-top: 3vh;
+}
+
 /* CharityDetail */
 .activities-title, .need-title, .summary-title  {
   font-weight: bold;
@@ -252,6 +259,12 @@ code {
   width: 80vw;
 }
 
+.charity-list-top-wrapper {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+}
+
 .funding-highlight {
   color: darkorange;
   font-weight: bold;
@@ -376,6 +389,50 @@ footer {
 }
 
 
+/* Logout */
+.signout-button {
+  background: inherit;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5em;
+  margin-left: 2vw;
+  /* margin-right: 60px; */
+  text-transform: uppercase;
+  /* &:hover {
+    color:#fe5426;
+    transform: scale(1.2);
+  }
+   @media(max-width: 600px) {
+     display: none;
+  } */
+}
+
+.logout-static-button {
+  background: #ffcf3c;
+  border: none;
+  color: #000f3c;
+  font-family: 'Raleway',sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+  padding: 1.3rem 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s linear;
+}
+/* @media (max-width: 576px) {
+  font-size: 1.5rem;
+  text-align: center;
+}
+&:hover {
+  color: #343078;
+} */
+
+
+
+
 /* Navbar */
 .navbar-header-container {
   align-items: center;
@@ -416,6 +473,16 @@ footer {
 .subnavbar-item {
   margin-left: 3vw;
   margin-top: 2vh;
+}
+
+.username-nav {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  transform: uppercase;
+/* &:hover {
+  color:#fe5426;
+} */
 }
 
 

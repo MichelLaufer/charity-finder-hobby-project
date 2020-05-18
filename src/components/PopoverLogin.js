@@ -75,11 +75,11 @@ export const PopoverLogin = () => {
         onClose={handleClose}
         anchorOrigin={{
           vertical: 'top',
-          horizontal: 'center'
+          horizontal: 'center',
         }}
         transformOrigin={{
           vertical: 'top',
-          horizontal: 'center'
+          horizontal: 'center',
         }}
       >
 

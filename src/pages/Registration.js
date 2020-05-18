@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
-const url = "localhost:8080/users"
+// const url = "https://localhost:8080/users"
 
 export const Registration = () => {
   const [name, setName] = useState("")
@@ -13,7 +13,7 @@ export const Registration = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    fetch(url, {
+    fetch("http://localhost:8081/users", {
       method: "POST",
       body: JSON.stringify({ name, email, password }),
       headers: { "Content-Type": "application/json" }

@@ -5,13 +5,15 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { charities } from 'reducers/charities'
 import { ui } from 'reducers/ui'
 import { users } from 'reducers/users'
+import { About } from './pages/About'
 import { CharityList } from './CharityList'
 import { CharityDetail } from './CharityDetail'
-import { ChildrenProjects } from './ChildrenProjects'
-import { FeaturedProjects } from './FeaturedProjects'
 import { Footer } from './components/Footer'
+import { Login } from './pages/Login'
+import { MyFavorites } from './pages/MyFavorites'
 import { Navbar } from './Navbar'
 import { OrganizationProjects } from './OrganizationProjects'
+import { Registration } from './pages/Registration'
 
 const reducer = combineReducers({
   charities: charities.reducer,
@@ -31,10 +33,12 @@ export const App = () => {
           <CharityList />
         </Route>
         <Switch>
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Registration} />
           <Route exact path="/charities/:id" component={CharityDetail} />
-          <Route exact path="/children" component={ChildrenProjects} />
-          <Route exact path="/featured" component={FeaturedProjects} />
           <Route exact path="/organization/:id" component={OrganizationProjects} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/myfavorites" component={MyFavorites} />
         </Switch>
         <Footer />
       </BrowserRouter>

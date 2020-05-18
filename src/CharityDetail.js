@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
+// import { FavoriteStatus } from './components/FavoriteStatus'
 import { ProgressBar } from './components/ProgressBar'
 
 const API_KEY = process.env.REACT_APP_API_KEY
@@ -131,6 +132,7 @@ export const CharityDetail = () => {
 
           <button className="favorites-button">Add to favorites</button>
 
+
           <div className="links-container">
             <h3 className="org-info-title">For more information</h3>
             <div className="link-item"><span className="link-highlight">Project link</span> <a className="project-link" href={charity.projectLink} target="_blank" rel="noopener noreferrer">{charity.projectLink}</a></div>
@@ -143,6 +145,7 @@ export const CharityDetail = () => {
   )
 }
 
+// <FavoriteStatus projectId={charity.id} projectTitle={charity.title} />
 
 // <button className="donation-button">DONATE</button>
 

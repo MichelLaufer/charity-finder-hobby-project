@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { charities } from '..reducers/charities'
+import { charities } from '../reducers/charities'
 
 
 export const DropDownList = () => {
@@ -17,9 +17,9 @@ export const DropDownList = () => {
           }}
         >
           <option value="featured">Featured projects</option>
-          <option value="children">Children projects</option>
-          <option value="education">Education projects</option>
-          <option value="technology">Technology projects</option>        
+          <option value="themes/children">Children projects</option>
+          <option value="themes/edu">Education projects</option>
+          <option value="themes/tech">Technology projects</option>        
         </select>
       </label>
     </div>
