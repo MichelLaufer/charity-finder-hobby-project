@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
-// import { FavoriteStatus } from './components/FavoriteStatus'
+import { FavoriteStatus } from './components/FavoriteStatus'
 import { ProgressBar } from './components/ProgressBar'
 
 const API_KEY = process.env.REACT_APP_API_KEY
@@ -8,7 +8,7 @@ const API_KEY = process.env.REACT_APP_API_KEY
 
 export const CharityDetail = () => {
   const { id } = useParams()
-  const [charity, setCharity] = useState([])
+  const [project, setProject] = useState([])
   const [donationoptions, setDonationOptions] = useState([])
   const [image, setImage] = useState([])
   const [loading, setLoading] = useState(true)
@@ -35,14 +35,14 @@ export const CharityDetail = () => {
       .then((res) => res.json())
       .then((json) => {
         setLoading(false)
-        setCharity(json.project)
+        setProject(json.project)
         setDonationOptions(json.project.donationOptions.donationOption)
         setImage(json.project.image.imagelink[3])
         setOrganization(json.project.organization)
       })  
   }, [id])
 
-  console.log(charity)
+  console.log(project)
   console.log(organization)
 
   if (loading) {
@@ -57,7 +57,7 @@ export const CharityDetail = () => {
       key={id}
       className="project-detail-background"
     >
-      <h2 className="project-detail-title">{charity.title}</h2>
+      <h2 className="project-detail-title">{project.title}</h2>
       <h3 className="project-detail-org-name">by {organization.name}</h3>
 
       <div className="project-detail-container">
@@ -68,25 +68,25 @@ export const CharityDetail = () => {
             <div className="project-detail-summary">
             <span className="summary-title">Summary</span>
             <br></br> 
-            {charity.summary}
+            {project.summary}
           </div>
       
           <div className="project-detail-need">
             <span className="need-title">Need</span>
             <br></br> 
-            {charity.need}
+            {project.need}
           </div>
 
           <div className="project-detail-activities">
             <span className="activities-title">Activities</span>
             <br></br> 
-            {charity.activities}
+            {project.activities}
           </div>
 
           <div className="project-detail-longtermimpact">
             <span className="activities-title">Long-term impact</span>
             <br></br> 
-            {charity.longTermImpact}
+            {project.longTermImpact}
           </div>
         </div>
       </div>
@@ -110,12 +110,12 @@ export const CharityDetail = () => {
         <div className="donation-wrap">
           <div className="donation-container">
             <div className="funding-raised-of-goal">
-              <span className="detail-highlight">€ {charity.funding}</span> raised of € {charity.goal} goal
+              <span className="detail-highlight">€ {project.funding}</span> raised of € {project.goal} goal
             </div>
             <div className="donations-and-remaining">
-              <span className="detail-highlight">{charity.numberOfDonations}</span> donations, € {charity.remaining} to go
+              <span className="detail-highlight">{project.numberOfDonations}</span> donations, € {project.remaining} to go
             </div>
-            <ProgressBar percentage={(charity.funding/charity.goal)*100} />
+            <ProgressBar percentage={(project.funding/project.goal)*100} />
           </div>
          
           <div className="usage-container">
@@ -130,20 +130,22 @@ export const CharityDetail = () => {
             ))}
           </div>
 
-          <button className="favorites-button">Add to favorites</button>
-
+          <FavoriteStatus projectId={project.id} projectTitle={project.title} />
 
           <div className="links-container">
             <h3 className="org-info-title">For more information</h3>
-            <div className="link-item"><span className="link-highlight">Project link</span> <a className="project-link" href={charity.projectLink} target="_blank" rel="noopener noreferrer">{charity.projectLink}</a></div>
-            <div className="link-item"><span className="link-highlight">Progress report</span> <a className="project-link" href={charity.progressReportLink} target="_blank" rel="noopener noreferrer">{charity.progressReportLink}</a></div>
-            <div className="link-item"><span className="link-highlight">Additional documentation</span> <a className="project-link" href={charity.additionalDocumentation} target="_blank" rel="noopener noreferrer">{charity.additionalDocumentation}</a></div>
+            <div className="link-item"><span className="link-highlight">Project link</span> <a className="project-link" href={project.projectLink} target="_blank" rel="noopener noreferrer">{project.projectLink}</a></div>
+            <div className="link-item"><span className="link-highlight">Progress report</span> <a className="project-link" href={project.progressReportLink} target="_blank" rel="noopener noreferrer">{project.progressReportLink}</a></div>
+            <div className="link-item"><span className="link-highlight">Additional documentation</span> <a className="project-link" href={project.additionalDocumentation} target="_blank" rel="noopener noreferrer">{project.additionalDocumentation}</a></div>
           </div>
         </div>
       </div>
     </div>
   )
 }
+
+
+// <button className="favorites-button">Add to favorites</button>
 
 // <FavoriteStatus projectId={charity.id} projectTitle={charity.title} />
 

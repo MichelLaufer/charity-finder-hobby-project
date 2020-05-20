@@ -54,7 +54,7 @@ export const CharityList = () => {
     )
   }
 
-  let charitiesResults = charities
+  let charitiesResults = charities.slice(0,9)
   if (searchResult.length > 0) {
     charitiesResults = searchResult
   }

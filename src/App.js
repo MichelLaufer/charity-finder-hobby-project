@@ -14,6 +14,7 @@ import { MyFavorites } from './pages/MyFavorites'
 import { Navbar } from './Navbar'
 import { OrganizationProjects } from './OrganizationProjects'
 import { Registration } from './pages/Registration'
+// import { SearchProjects } from './pages/SearchProjects'
 
 const reducer = combineReducers({
   charities: charities.reducer,
@@ -39,6 +40,7 @@ export const App = () => {
           <Route exact path="/organization/:id" component={OrganizationProjects} />
           <Route exact path="/about" component={About} />
           <Route exact path="/myfavorites" component={MyFavorites} />
+
         </Switch>
         <Footer />
       </BrowserRouter>
