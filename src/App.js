@@ -10,7 +10,7 @@ import { CharityList } from './CharityList'
 import { CharityDetail } from './CharityDetail'
 import { Footer } from './components/Footer'
 import { Login } from './pages/Login'
-import { MyFavorites } from './pages/MyFavorites'
+import { UserFavorites } from './pages/UserFavorites'
 import { Navbar } from './Navbar'
 import { OrganizationProjects } from './OrganizationProjects'
 import { Registration } from './pages/Registration'
@@ -39,7 +39,7 @@ export const App = () => {
           <Route exact path="/charities/:id" component={CharityDetail} />
           <Route exact path="/organization/:id" component={OrganizationProjects} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/myfavorites" component={MyFavorites} />
+          <Route exact path="/myfavorites" component={UserFavorites} />
 
         </Switch>
         <Footer />

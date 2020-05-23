@@ -65,31 +65,31 @@ export const CharityDetail = () => {
           <img className="project-img" src={image.url} /> 
           <div className="info-and-usage-wrap">
             <div className="info-container">
-            <div className="project-detail-summary">
-            <span className="summary-title">Summary</span>
-            <br></br> 
-            {project.summary}
-          </div>
+              <div className="project-detail-summary">
+                <span className="summary-title">Summary</span>
+                <br></br> 
+                {project.summary}
+              </div>
       
-          <div className="project-detail-need">
-            <span className="need-title">Need</span>
-            <br></br> 
-            {project.need}
-          </div>
+              <div className="project-detail-need">
+                <span className="need-title">Need</span>
+                <br></br> 
+                {project.need}
+              </div>
 
-          <div className="project-detail-activities">
-            <span className="activities-title">Activities</span>
-            <br></br> 
-            {project.activities}
-          </div>
+              <div className="project-detail-activities">
+                <span className="activities-title">Activities</span>
+                <br></br> 
+                {project.activities}
+              </div>
 
-          <div className="project-detail-longtermimpact">
-            <span className="activities-title">Long-term impact</span>
-            <br></br> 
-            {project.longTermImpact}
+              <div className="project-detail-longtermimpact">
+                <span className="activities-title">Long-term impact</span>
+                <br></br> 
+                {project.longTermImpact}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
 
         <div className="organization-container">
           <h3 className="org-info-title">Organization information</h3>

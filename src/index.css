@@ -21,6 +21,28 @@ code {
   margin-top: 3vh;
 }
 
+
+/* Charity Cards */
+.charity-card-title {
+  font-weight: bold;
+  margin-left: 6vw;
+  margin-right: 1vw;
+}
+
+.favorite-charity-card {
+  border: 1px solid gray;
+  height: 200px;
+  margin: 10px;
+  padding-right: 8px;
+  width: 400px;
+}
+
+.wrap-charity-card {
+  border-radius: 20px 0 0 20px;
+  display: flex;
+  flex-direction: row;
+}
+
 /* CharityDetail */
 .activities-title, .need-title, .summary-title  {
   font-weight: bold;
@@ -60,7 +82,7 @@ code {
   flex-direction: column;
   font-size: 18px;
   margin-bottom: 5vh;
-  margin-left: 4vw;
+  margin-left: 12vw;
   padding-bottom: 2vh;
   padding-top: 2vh;
   width: 80vw;
@@ -148,7 +170,7 @@ code {
   flex-direction: column;
   font-size: 16px;
   margin-bottom: 5vh;
-  margin-left: 4vw;
+  margin-left: 12vw;
   overflow-wrap: break-word;
   padding-bottom: 6vh;
   padding-left: 1vw;
@@ -228,7 +250,7 @@ code {
   background: white;
   border: 1px;
   font-size: 18px;
-  margin-left: 4vw;
+  margin-left: 12vw;
   width: 80vw;
 }  
 
@@ -238,7 +260,7 @@ code {
   border: 1px solid gray;
   display: flex;
   flex-direction: column;
-  height: 600px;
+  height: 560px;
   margin-bottom: 4vh;
   padding-bottom: 2vh;
   width: 80vw;
@@ -254,14 +276,15 @@ code {
 }
 
 .charity-list-img {
+  max-height: 50vh;
   width: 80vw;
 }
 
-.charity-list-top-wrapper {
+/* .charity-list-top-wrapper {
   justify-content: space-between;
   display: flex;
   flex-direction: row;
-}
+} */
 
 .funding-highlight {
   color: darkorange;
@@ -290,9 +313,9 @@ code {
 
 /* DropDownList.js */
 .category-dropdown label {
-  align-items: center;
+  /* align-items: center;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-end; */
   margin: 10px;
 }
 
@@ -377,7 +400,7 @@ code {
   font-size: 18px;
   margin: 8px 0;
   margin-bottom: 8vh;
-  margin-left: 6vw;
+  margin-left: 14vw;
   margin-right: 6vw;
   margin-top: 4vh;
   padding: 14px 20px;
@@ -544,13 +567,19 @@ footer {
   text-decoration: none;
 }
 
+.navright-container {
+  align-items: baseline;
+  display: flex;
+  flex-direction: row;
+}
+
 
 .subnavbar {
   align-items: baseline;
   background: orange;
   color: white;
   display: flex;
-  height: 50px;
+  height: 70px;
   /* text-transform: uppercase; */
 }
 
@@ -567,6 +596,10 @@ footer {
 /* &:hover {
   color:#fe5426;
 } */
+}
+
+.username-nav:hover {
+  color: #fe5426;
 }
 
 
@@ -765,8 +798,17 @@ label {
 
 /* MEDIA QUERIES */
 @media(min-width: 768px) {
+/* Charity Cards */
+.favorite-charity-card {
+  height: 282px;
+  margin: 10px;
+  padding-bottom: 5px;
+  width: 50vw;
+}
+
 /* Charity Detail */
 .donation-container {
+  margin-left: 4vw;
   width: 30vw;
 }
 .donation-wrap {
@@ -785,6 +827,7 @@ label {
   width: 40vw;
 }
 .links-container {
+  margin-left: 4vw;
   width: 30vw;
 }
 .organization-container {
@@ -812,6 +855,7 @@ label {
   width: 42vw;
 }
 .usage-container {
+  margin-left: 4vw;
   width: 30vw;
 }
 
@@ -819,6 +863,7 @@ label {
 .charity-card {
   /* border-radius: 10px; */
   /* box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.568); */
+  height: 600px;
   margin-bottom: 8vh;
   width: 30vw;
 }
@@ -834,6 +879,26 @@ label {
   max-height: 50vh;
   width: 30vw;
 }
+.charity-list-top-wrapper {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+}
+
+
+/* Dropdown List */
+.category-dropdown label {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+/* Favorite Status */
+.button-favorite {
+  margin-left: 8vw;
+}
+
 
 /* Hamburger */
 .hamburger-wrap {
@@ -846,8 +911,14 @@ label {
   justify-content: space-between;
   padding-left: 15px;
 }
+.navright-container {
+  display: flex;  
+  margin-right: 10px;
+  padding: 0;
+}
 .subnavbar {
   align-items: center;
+  height: 50px;
 }
 
 

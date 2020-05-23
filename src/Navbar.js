@@ -43,6 +43,7 @@ export const Navbar = () => {
         }
         </div>
       </div>
+
       <div className="subnavbar">
         <h3 className="subnavbar-item">
           <Link to={`/`}>Projects</Link>
@@ -57,8 +58,8 @@ export const Navbar = () => {
         </h3>
 
         <h3 className="subnavbar-item">
-        <Link to={`/about`}>About</Link>
-      </h3>
+          <Link to={`/about`}>About</Link>
+        </h3>
 
       </div>
     </>

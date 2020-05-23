@@ -36,7 +36,7 @@ export const CharityCards = ({ id }) => {
         setLoading(false)
         setProject(json.project)
         setDonationOptions(json.project.donationOptions.donationOption)
-        setImage(json.project.image.imagelink[3])
+        setImage(json.project.image.imagelink[2])
         setOrganization(json.project.organization)
       })  
   }, [id])
@@ -51,10 +51,11 @@ export const CharityCards = ({ id }) => {
   
   return (
     <div 
-      className="charity-card"
+      className="favorite-charity-card"
       key={id}
     >
       <div className="wrap-charity-card">
+        <img className="card-img" src={image.url} /> 
         <div className="wrap-charity-card-info">
           <div className="charity-card-title">{project.title}</div>
           <FavoriteStatus 
