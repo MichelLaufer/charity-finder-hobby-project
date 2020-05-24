@@ -59,7 +59,7 @@ export const UserFavorites = () => {
     <>
       <div className="wrapper-box">
         {errorMessage && <div>{errorMessage}</div>}
-        {!errorMessage && <div>Your favorites</div>}
+        {!errorMessage && <div className="your-favorites">Your favorite charity projects</div>}
         {projectStatus && !projectStatus.message && (
           projectStatus.map((project) => (
             <CharityCards key={project.projectId} id={project.projectId} />

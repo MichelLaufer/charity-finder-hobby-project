@@ -55,7 +55,9 @@ export const CharityCards = ({ id }) => {
       key={id}
     >
       <div className="wrap-charity-card">
-        <img className="card-img" src={image.url} /> 
+        <Link key={project.id} to={`/charities/${project.id}`}>
+          <img className="card-img" src={image.url} />
+        </Link>
         <div className="wrap-charity-card-info">
           <div className="charity-card-title">{project.title}</div>
           <FavoriteStatus 
