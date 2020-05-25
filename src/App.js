@@ -11,6 +11,7 @@ import { CharityDetail } from './CharityDetail'
 import { Footer } from './components/Footer'
 import { Login } from './pages/Login'
 import { UserFavorites } from './pages/UserFavorites'
+import { UserList } from './pages/UserList'
 import { Navbar } from './Navbar'
 import { OrganizationProjects } from './OrganizationProjects'
 import { Registration } from './pages/Registration'
@@ -37,6 +38,7 @@ export const App = () => {
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Registration} />
           <Route exact path="/charities/:id" component={CharityDetail} />
+          <Route exact path="/userlist" component={UserList} />
           <Route exact path="/organization/:id" component={OrganizationProjects} />
           <Route exact path="/about" component={About} />
           <Route exact path="/myfavorites" component={UserFavorites} />

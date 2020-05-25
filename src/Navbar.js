@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-// import { Hamburger } from './components/Hamburger'
+import { Hamburger } from './components/Hamburger'
 import { Logout } from './components/Logout'
 import { PopoverLogin } from 'components/PopoverLogin'
 import { Searchbar } from './components/Searchbar'
@@ -27,10 +27,10 @@ export const Navbar = () => {
   return (
     <>
       <div className="navbar-header-container">
+        <Hamburger />
         <h1 className="navbar-header-title">
           <Link to={`/`}>Make the world better</Link>
         </h1>
-
 
         <Searchbar />
         <div className="navright-container">
@@ -54,7 +54,7 @@ export const Navbar = () => {
         </h3>
 
         <h3 className="subnavbar-item">
-          <Link to={`/otherusers`}>Other users</Link>
+          <Link to={`/userlist`}>Other users</Link>
         </h3>
 
         <h3 className="subnavbar-item">
