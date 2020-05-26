@@ -13,6 +13,7 @@ export const CharityList = () => {
   const [loading, setLoading] = useState(true)
   const searchResult = useSelector(state => state.charities.charities)
   const category = useSelector(state => state.charities.chosenCategory)
+  // const country = useSelector(state => state.charities.chosenCountry)
   // const url = useSelector(state => state.charities.url)
   // const url = `https://api.globalgiving.org/api/public/projectservice/all/projects/active.json?api_key=${API_KEY}`
 

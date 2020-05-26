@@ -278,7 +278,7 @@ code {
 }
 
 .charity-list {
-  margin-left: 3vw;
+  margin-left: 9vw;
 }
 
 .charity-list-img {
@@ -286,11 +286,9 @@ code {
   width: 80vw;
 }
 
-/* .charity-list-top-wrapper {
-  justify-content: space-between;
-  display: flex;
-  flex-direction: row;
-} */
+.charity-list-top-wrapper {
+  margin-left: 6vw;
+}
 
 .funding-highlight {
   color: darkorange;
@@ -437,6 +435,21 @@ footer {
   padding: 1em;
 }
 
+/* Login and registration */
+.form-button {
+  background: darkgoldenrod;
+  border-color: transparent;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  margin: 2px;
+  padding: 10px;
+  text-shadow: -1px -1px rgba(0,0,0,0.1);
+  text-transform: uppercase;
+}
+
 
 /* Logout */
 .signout-button {
@@ -444,6 +457,7 @@ footer {
   border: none;
   color: #fff;
   cursor: pointer;
+  display: none;
   font-family: 'Raleway', sans-serif;
   font-size: 1.5em;
   margin-left: 2vw;
@@ -453,9 +467,7 @@ footer {
     color:#fe5426;
     transform: scale(1.2);
   }
-   @media(max-width: 600px) {
-     display: none;
-  } */
+*/
 }
 
 .logout-static-button {
@@ -546,12 +558,32 @@ footer {
 }
 
 
+/* Other user */
+.otheruser-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 2vh;
+}
+
+.otheruser-title {
+  font-size: 16px;
+}
+
+.otheruser-wrap {
+  margin-bottom: 3vh;
+  margin-left: 3vw;
+  margin-top: 2vh;
+}
+
+
+
 /* PopoverLogin */
 .signin-button {
   background: inherit;
   border: none;
   color: #fff;
   cursor: pointer;
+  display: none;
   font-family: 'Raleway', sans-serif;
   font-size: 1.5em;
   margin-left: 2vw;
@@ -683,58 +715,6 @@ label {
 }
 
 
-/* Sidebar */
-/* Styling the sidebar */
-/* .bm-item {
-  display: inline-block;
-  text-decoration: none;
-  margin-bottom: 10px;
-  color: white;
-  transition: color 0.2s;
-}
-
-.bm-item:hover {
-  color: white;
-}
-
-.bm-burger-button {
-  position: fixed;
-  width: 32px;
-  height: 26px;
-  left: 33px;
-  top: 33px;
-}
-
-.bm-burger-bars {
-  background: white;
-}
-
-.bm-cross-button {
-  height: 24px;
-  width: 24px;
-}
-
-.bm-cross {
-  background: white;
-}
-
-.bm-menu {
-  background: #D2691E;
-  font-size: 1.15em;
-  padding: 2em 1em 0;
-}
-
-.bm-morph-shape {
-  fill: white;
-}
-
-.bm-item-list {
-  color: #b8b7ad;
-}
-
-.bm-overlay {
-  background: rgba(0, 0, 0, 0.3);
-} */
 
 
 /* User Favorites */
@@ -745,6 +725,29 @@ label {
   margin-left: 3vw;
   margin-top: 3vh;
 }
+
+
+/* User List */
+.userlist-names {
+  font-size: 18px;
+}
+
+.userlist-names-link {
+  color: black;
+  text-decoration: none;
+}
+
+.userlist-title {
+  font-size: 22px;
+  margin-bottom: 2vh;
+}
+
+.userlist-wrap {
+  margin-bottom: 2vh;
+  margin-left: 3vw;
+  margin-top: 2vh;
+}
+
 
 
 
@@ -839,9 +842,10 @@ label {
   width: 30vw;
 }
 .charity-list-top-wrapper {
-  justify-content: space-between;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  margin-left: 0;
 }
 
 
@@ -864,6 +868,13 @@ label {
   display: none;
 }
 
+
+/* Logout */
+.signout-button {
+  display: inline-block;
+}
+
+
 /* Navbar */
 .navbar-header-container {
   flex-direction: row;
@@ -883,6 +894,12 @@ label {
   height: 50px;
 }
 .subnavbar-item {
+  display: inline-block;
+}
+
+
+/* PopoverLogin */
+.signin-button {
   display: inline-block;
 }
 

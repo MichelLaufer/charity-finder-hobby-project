@@ -81,6 +81,7 @@ export const Registration = () => {
               ></input>
             </label>
             <button
+              className="form-button"
               type="submit"
               disabled={
                 name.length > 1 &&
@@ -94,7 +95,11 @@ export const Registration = () => {
             >
               SIGN UP
             </button>
-            <button type="button" onClick={reDirect}>
+            <button
+              className="form-button" 
+              type="button" 
+              onClick={reDirect}
+            >
               Already a member?
             </button>
           </form>

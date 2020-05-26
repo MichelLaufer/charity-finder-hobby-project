@@ -47,10 +47,10 @@ export const Login = () => {
         </label>
         {failed && <div className="error-message">Incorrect user and/or password</div>}
 
-        <button type="submit" onClick={handleSignin}>
+        <button className="form-button" type="submit" onClick={handleSignin}>
           Login
         </button>
-        <button type="button" onClick={reDirect}>
+        <button className="form-button" type="button" onClick={reDirect}>
           Not a member?
         </button>
       </form>

@@ -6,7 +6,8 @@ const API_KEY = process.env.REACT_APP_API_KEY
 const initialState = {
   charities: [], 
   // url: `https://api.globalgiving.org/api/public/projectservice/all/projects/active.json?api_key=${API_KEY}`,
-  chosenCategory: "featured"
+  chosenCategory: "featured",
+  chosenCountry: ""
 }
 
 export const charities = createSlice({
@@ -18,6 +19,9 @@ export const charities = createSlice({
     },
     setCategory: (state, action) => {
       state.chosenCategory = action.payload
+    },
+    setCountry: (state, action) => {
+      state.chosenCountry = action.payload
     }
   }
 })

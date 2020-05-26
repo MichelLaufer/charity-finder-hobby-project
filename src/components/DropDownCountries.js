@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { charities } from '../reducers/charities'
 
 
-export const DropDownList = () => {
+export const DropDownCountries = () => {
   const dispatch = useDispatch()
 
   return (
@@ -13,14 +13,12 @@ export const DropDownList = () => {
           className="select-css"
           onChange={(event) => {
             dispatch(charities.actions.setSearchTerm(""))
-            dispatch(charities.actions.setCategory(event.target.value))
+            dispatch(charities.actions.setCountry(event.target.value))
           }}
         >
-          <option value="featured">Featured projects</option>
-          <option value="themes/children">Children projects</option>
-          <option value="themes/edu">Education projects</option>
-          <option value="themes/tech">Technology projects</option>
-          <option value="themes/gender">Women and girls projects</option>
+          <option value="AF">Afghanistan</option>
+          <option value="NG">Nigeria</option>
+          <option value="IN">India</option>
         </select>
       </label>
     </div>

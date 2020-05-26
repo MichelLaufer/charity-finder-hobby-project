@@ -18,13 +18,18 @@ export const UserList = () => {
   }, [userId])
 
   return (
-    <div>
-     {userList.map((user) => (
-       userId !== user._id &&
-       <div>
-         {user.name}
-       </div>
-     ))}
+    <div className="userlist-wrap">
+      <div className="userlist-title">
+        Other Users
+      </div>
+      {userList.map((user) => (
+        userId !== user._id &&
+        <div className="userlist-names">
+          <Link to={`/users/${user._id}`} key={user._id} className="userlist-names-link">
+            {user.name} - {user.charities.length} added favorites
+          </Link>
+        </div>
+      ))}
     </div>
   )
 }

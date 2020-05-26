@@ -18,6 +18,7 @@ export const DropDownList = () => {
         >
           <option value="featured">Featured projects</option>
           <option value="themes/children">Children projects</option>
+          <option value="themes/covid-19">COVID-19 projects</option>
           <option value="themes/edu">Education projects</option>
           <option value="themes/tech">Technology projects</option>
           <option value="themes/gender">Women and girls projects</option>

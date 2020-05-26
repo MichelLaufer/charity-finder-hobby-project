@@ -38,6 +38,18 @@ return (
       Other users
     </Link>
 
+    <Link to="/login"
+      onClick={() => { handleTabChange("login"); setOpen(!open)}}
+    >
+      Sign in
+    </Link>
+
+    <Link to="/register"
+      onClick={() => { handleTabChange("register"); setOpen(!open)}}
+    >
+      Register
+    </Link>
+
     <Link to="/about"
       onClick={() => { handleTabChange("about"); setOpen(!open)}}
     >
@@ -139,7 +151,7 @@ const StyledMenu = styled.nav`
   a {
     color: #000f3c;
     font-family: 'Raleway',sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     letter-spacing: 0.5rem;
     padding: 1.3rem 0;

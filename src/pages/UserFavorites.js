@@ -65,6 +65,7 @@ export const UserFavorites = () => {
             <CharityCards key={project.projectId} id={project.projectId} />
           ))
         )}
+
         {projectStatus && projectStatus.message && (
           <div className="error-message">`No projects added to your favorites</div>
         )}
@@ -72,3 +73,5 @@ export const UserFavorites = () => {
     </>
   )
 }
+
+// <div>Your donation budget: 1000 EUR</div>
