@@ -11,6 +11,7 @@ export const CharityDetail = () => {
   const [project, setProject] = useState([])
   const [donationoptions, setDonationOptions] = useState([])
   const [image, setImage] = useState([])
+  const [imageGallery, setImageGallery] = useState([])
   const [loading, setLoading] = useState(true)
   const [organization, setOrganization] = useState([])
  
@@ -42,8 +43,30 @@ export const CharityDetail = () => {
       })  
   }, [id])
 
-  console.log(project)
-  console.log(organization)
+  const url_img = `https://api.globalgiving.org/api/public/projectservice/projects/${id}/imagegallery?api_key=${API_KEY}`
+  const newhead_img = new Headers({
+    'Accept': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type'
+  })
+
+
+  let req_img = new Request(url_img, {
+    method: 'GET',
+    headers: newhead_img
+  })
+
+  // Fetch individual project image gallery
+  useEffect(() => {
+    setLoading(true)
+    fetch(req_img)
+      .then((res) => res.json())
+      .then((json) => {
+        setImageGallery(json.images.image)
+      })  
+  }, [id])
+
+  console.log(imageGallery)
 
   if (loading) {
     return (
@@ -139,6 +162,20 @@ export const CharityDetail = () => {
             <div className="link-item"><span className="link-highlight">Additional documentation</span> <a className="project-link" href={project.additionalDocumentation} target="_blank" rel="noopener noreferrer">{project.additionalDocumentation}</a></div>
           </div>
         </div>
+      </div>
+
+      <div className="image-gallery">
+      <h3 className="org-info-title">Image gallery</h3>
+      <div className="image-gallery-container">
+        {imageGallery.map((image) => (
+        <div 
+          className="image-gallery-item"
+          key={image.id}
+        >
+          <img className="gallery-img" src={image.imagelink[2].url} /> 
+        </div>
+        ))}
+      </div>
       </div>
     </div>
   )

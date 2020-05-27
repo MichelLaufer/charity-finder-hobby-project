@@ -23,31 +23,31 @@ return (
     <Link to="/"
       onClick={() => { handleTabChange("charities"); dispatch(charities.actions.setSearchTerm("")); setOpen(!open)}}
     >
-      Projects
+      🎗Projects
     </Link>
 
     <Link to="/myfavorites"
       onClick={() => { handleTabChange("favorites"); setOpen(!open)}}
     >
-      My favorites
+      ❤️My favorites
     </Link>
 
     <Link to="/userlist"
       onClick={() => { handleTabChange("otherusers"); setOpen(!open)}}
     >
-      Other users
+      👩👨Other users
     </Link>
 
     <Link to="/login"
       onClick={() => { handleTabChange("login"); setOpen(!open)}}
     >
-      Sign in
+      ☑️Sign in
     </Link>
 
     <Link to="/register"
       onClick={() => { handleTabChange("register"); setOpen(!open)}}
     >
-      Register
+      📝Register
     </Link>
 
     <Link to="/about"
@@ -59,7 +59,7 @@ return (
     <Link
       onClick={() => setOpen(!open)}
     >
-      <LogoutStatic />
+      ❌<LogoutStatic />
     </Link>
   </StyledMenu>
 )

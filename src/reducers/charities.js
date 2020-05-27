@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { ui } from 'reducers/ui'
+import { ui } from './ui'
 
 const API_KEY = process.env.REACT_APP_API_KEY
 
@@ -42,6 +42,7 @@ export const searchResult = (searchTerm) => {
     })
 
     fetch(req)
+      dispatch(ui.actions.setLoading(true))
       .then(res => res.json())
       .then(json => {
         dispatch(charities.actions.setSearchTerm(json.projects))
