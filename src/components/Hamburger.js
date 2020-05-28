@@ -35,7 +35,7 @@ return (
     <Link to="/userlist"
       onClick={() => { handleTabChange("otherusers"); setOpen(!open)}}
     >
-      👩👨Other users
+      Other users
     </Link>
 
     <Link to="/login"

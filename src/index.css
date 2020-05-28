@@ -13,8 +13,14 @@ code {
     monospace;
 }
 
+.loading-message {
+  margin-bottom: 2vh;
+  margin-left: 2vw;
+  margin-top: 2vh;
+}
 
-/* About */
+
+/* About *********************************************/
 .about {
   margin-bottom: 6vh;
   margin-left: 3vw;
@@ -22,7 +28,7 @@ code {
 }
 
 
-/* Charity Cards */
+/* Charity Cards ************************************/
 .card-img {
   height: 150px;
   width: 200px;
@@ -49,7 +55,8 @@ code {
   flex-direction: row;
 }
 
-/* CharityDetail */
+
+/* CharityDetail ***********************************/
 .activities-title, .need-title, .summary-title  {
   font-weight: bold;
 }
@@ -98,8 +105,9 @@ code {
   margin-left: 2vw;
 }
 
-.donation-options {
+.donation-options-button {
   background: orange;
+  border: 1px lightsalmon solid;
   color: white;
   display: flex;
   font-size: 16px;
@@ -107,6 +115,14 @@ code {
   margin-left: 1vw;
   margin-right: 1vw;
   padding: 4px;
+  width: 92%;
+}
+
+.donation-title {
+  font-weight: bold;
+  margin-bottom: 2vh;
+  margin-left: 1vw;
+  margin-top: 1vh;
 }
 
 .donation-wrap {
@@ -119,7 +135,6 @@ code {
 .favorites-button {
   background: brown;
   border: none;
-  /* border-radius: 20px; */
   color: white;
   cursor: pointer;
   font-size: 18px;
@@ -134,6 +149,10 @@ code {
 
 .funding-raised-of-goal {
   margin-bottom: 2vh;
+}
+
+.gallery-image {
+  max-width: 75vw;
 }
 
 .hero-image {
@@ -197,12 +216,6 @@ code {
   padding-top: 2vh;
   word-wrap: break-word;
   width: 80vw;
-  /* margin-bottom: 4vh;
-  margin-left: 10vw;
-  margin-top: 8vh;
-  padding-bottom: 4vh;
-  padding-left: 1vw;
-  padding-right: 1vw; */
 }
 
 .organization-container {
@@ -235,8 +248,6 @@ code {
 }
 
 .project-detail-background {
-  /* margin-left: 5vw;
-  margin-right: 5vw; */
   margin-top: 3vh;
   width: 80vw;
 }
@@ -244,7 +255,6 @@ code {
 .project-detail-activities, .project-detail-longtermimpact, .project-detail-need {
   margin-bottom: 3vh;
   margin-top: 3vh;
-  /* width: 50vw; */
 }
 
 .project-detail-org-name {
@@ -268,14 +278,14 @@ code {
 
 .usage-container {
   background: white;
-  border: 1px;
+  border: 1px grey solid;
   font-size: 18px;
   margin-left: 12vw;
   width: 80vw;
 }  
 
 
-/* CharityList */
+/* CharityList ********************************************/
 .charity-card {
   border: 1px solid gray;
   display: flex;
@@ -329,7 +339,7 @@ code {
 }
 
 
-/* DropDownList.js */
+/* DropDownList.js *************************************************/
 .category-dropdown label {
   /* align-items: center;
   display: flex;
@@ -358,8 +368,7 @@ code {
   width: 290px;
   -moz-appearance: none;
   -webkit-appearance: none;
-  /* note: bg image below uses 2 urls. The first is an svg data uri for the arrow icon, 
-     and the second is the gradient. for the icon, if you want to change the color, be sure 
+  /* note: if you want to change the color, be sure 
      to use `%23` instead of `#`, since it's a url. You can also swap in a different svg icon 
      or an external image reference
   */
@@ -408,11 +417,10 @@ code {
 }
 
 
-/* Favorite Status */
+/* Favorite Status ****************************************/
 .button-favorite {
   background: brown;
   border: none;
-  /* border-radius: 20px; */
   color: white;
   cursor: pointer;
   font-size: 18px;
@@ -426,8 +434,7 @@ code {
 }
 
 
-
-/* Footer */
+/* Footer ************************************************/
 footer {
   background: darkorange;
   color: white;
@@ -437,11 +444,11 @@ footer {
 }
 
 
-/* Hamburger */
+/* Hamburger ********************************************/
 /*Styling in Hamburger.js component (styled components) */
 
 
-/* Loading */
+/* Loading **********************************************/
 .loading-icon {
   align-items: center;
   display: flex;
@@ -449,7 +456,8 @@ footer {
   padding: 1em;
 }
 
-/* Login and registration */
+
+/* Login and registration ******************************/
 .form-button {
   background: darkgoldenrod;
   border-color: transparent;
@@ -465,7 +473,7 @@ footer {
 }
 
 
-/* Logout */
+/* Logout **********************************************/
 .signout-button {
   background: inherit;
   border: none;
@@ -475,13 +483,12 @@ footer {
   font-family: 'Raleway', sans-serif;
   font-size: 1.5em;
   margin-left: 2vw;
-  /* margin-right: 60px; */
   text-transform: uppercase;
-  /* &:hover {
-    color:#fe5426;
-    transform: scale(1.2);
-  }
-*/
+}
+
+.signin-button:hover {
+  color:#fe5426;
+  transform: scale(1.2);
 }
 
 .logout-static-button {
@@ -489,7 +496,7 @@ footer {
   border: none;
   color: #000f3c;
   font-family: 'Raleway',sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   letter-spacing: 0.5rem;
   padding: 1.3rem 0;
@@ -497,18 +504,13 @@ footer {
   text-transform: uppercase;
   transition: color 0.3s linear;
 }
-/* @media (max-width: 576px) {
-  font-size: 1.5rem;
-  text-align: center;
-}
-&:hover {
+
+.logout-static-button:hover {
   color: #343078;
-} */
+}
 
 
-
-
-/* Navbar */
+/* Navbar *******************************************/
 .navbar-header-container {
   align-items: center;
   background: #FF8C00;
@@ -529,8 +531,6 @@ footer {
   font-size: 36px;
   line-height: 0.7;
   margin-left: 8vw;
-  /* margin-bottom: 0; */
-  /* margin-left: 3vw; */
 }
 
 .navbar-header-title a, .subnavbar-item a {
@@ -544,14 +544,12 @@ footer {
   flex-direction: row;
 }
 
-
 .subnavbar {
   align-items: baseline;
   background: orange;
   color: white;
   display: flex;
   height: 30px;
-  /* text-transform: uppercase; */
 }
 
 .subnavbar-item {
@@ -565,17 +563,15 @@ footer {
   font-size: 16px;
   text-decoration: none;
   transform: uppercase;
-/* &:hover {
-  color:#fe5426;
-} */
 }
 
 .username-nav:hover {
   color: #fe5426;
+  cursor: pointer;
 }
 
 
-/* Other user */
+/* Other user *******************************************/
 .otheruser-name {
   font-size: 20px;
   font-weight: bold;
@@ -593,8 +589,7 @@ footer {
 }
 
 
-
-/* PopoverLogin */
+/* PopoverLogin *******************************************/
 .signin-button {
   background: inherit;
   border: none;
@@ -606,10 +601,6 @@ footer {
   margin-left: 2vw;
   margin-right: 4vw;
   text-transform: uppercase;
-  /* 
-   @media(max-width: 600px) {
-     display: none;
-  } */
 }
 
 .signin-button:hover {
@@ -618,8 +609,7 @@ footer {
 }
 
 
-
-/* ProgressBar */
+/* ProgressBar *******************************************/
 .filler {
   background: lightsalmon;
   border-radius: inherit;
@@ -637,22 +627,8 @@ footer {
 }
 
 
-/* Registration */
-/* .field-container {
-  &.-focused label {
-    bottom: auto;
-    color: #888;
-    font-size: 11px;
-    font-weight: bold;
-    line-height: 12px;
-    top: 8px;
-  }
-  &.-focused input {
-    line-height: 62px;
-  }
-} */
-
-
+/* Registration *********************************************/
+/* Also see Login-styling above */
 form {
   background: #ededed;
   border-radius: 8px;
@@ -667,14 +643,12 @@ form {
 
 .heading {
   border-radius: 15px;
-  /* color: ${props => props.color ? props.color : "#000"}; */
   font-size: 1.5em;
   font-weight: normal;
   margin: 10px 0;
   text-align: center; 
   font-family: 'Raleway', sans-serif; 
 }
-
 
 input {
   background: transparent;
@@ -707,7 +681,7 @@ label {
 }
 
 
-/* Searchbar */
+/* Searchbar **************************************************/
 .form-search {
   background: none;
   border-radius: 8px;
@@ -733,9 +707,7 @@ label {
 }
 
 
-
-
-/* User Favorites */
+/* User Favorites *********************************************/
 .your-favorites {
   font-size: 24px;
   font-weight: bold;
@@ -745,7 +717,7 @@ label {
 }
 
 
-/* User List */
+/* User List **************************************************/
 .userlist-names {
   font-size: 18px;
 }
@@ -770,9 +742,10 @@ label {
 
 
 
-/* MEDIA QUERIES */
+/* MEDIA QUERIES *************************************************/
+/*****************************************************************/
 @media(min-width: 768px) {
-/* Charity Cards */
+/* Charity Cards *************************************************/
 .card-img {
   height: 200px;
   width: 350px;
@@ -782,14 +755,17 @@ label {
   margin: 10px;
   margin-bottom: 5vh;
   margin-left: 3vw;
-  /* padding-bottom: 5px; */
   width: 55vw;
 }
 
-/* Charity Detail */
+
+/* Charity Detail ************************************************/
 .donation-container {
   margin-left: 4vw;
   width: 30vw;
+}
+.donation-options-button {
+  cursor: pointer;
 }
 .donation-wrap {
   margin-left: 0;
@@ -801,14 +777,12 @@ label {
   padding-right: 2vw;
   width: 55vw;
 }
-
 .image-gallery-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   padding-top: 2vh;
 }
-
 .image-gallery-item {
   padding-bottom: 2vh;
   width: 50%;
@@ -858,10 +832,9 @@ label {
   width: 30vw;
 }
 
-/* Charity List */
+
+/* Charity List ********************************************/
 .charity-card {
-  /* border-radius: 10px; */
-  /* box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.568); */
   height: 600px;
   margin-bottom: 8vh;
   width: 30vw;
@@ -886,7 +859,7 @@ label {
 }
 
 
-/* Dropdown List */
+/* Dropdown List ************************************************/
 .category-dropdown label {
   align-items: center;
   display: flex;
@@ -894,25 +867,25 @@ label {
 }
 
 
-/* Favorite Status */
+/* Favorite Status *********************************************/
 .button-favorite {
   margin-left: 8vw;
 }
 
 
-/* Hamburger */
+/* Hamburger **************************************************/
 .hamburger-wrap {
   display: none;
 }
 
 
-/* Logout */
+/* Logout *****************************************************/
 .signout-button {
   display: inline-block;
 }
 
 
-/* Navbar */
+/* Navbar ****************************************************/
 .navbar-header-container {
   flex-direction: row;
   justify-content: space-between;
@@ -935,13 +908,13 @@ label {
 }
 
 
-/* PopoverLogin */
+/* PopoverLogin *******************************************************/
 .signin-button {
   display: inline-block;
 }
 
 
-/* ProgressBar */
+/* ProgressBar ********************************************************/
 .progress-bar {
   border: 1px solid black;
   border-radius: 50px;
@@ -950,7 +923,8 @@ label {
   width: 25vw;
 }
 
-/* Searchbar */
+
+/* Searchbar *********************************************************/
 .search-line {
   width: 250px;
 }

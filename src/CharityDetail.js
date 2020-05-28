@@ -70,7 +70,7 @@ export const CharityDetail = () => {
 
   if (loading) {
     return (
-      <div>Charity page is loading...</div>
+      <div className="loading-message">Charity page is loading...</div>
     )
   }
 
@@ -117,11 +117,7 @@ export const CharityDetail = () => {
         <div className="organization-container">
           <h3 className="org-info-title">Organization information</h3>
           <div>
-            <Link to={`/organization/${organization.id}`}>
-              <img 
-                src={organization.logoUrl}
-              />
-            </Link>
+            <img src={organization.logoUrl} />
             <h3 className="org-name">{organization.name}</h3>
           </div>
           <div><span className="detail-highlight">Location:</span> {organization.city}, {organization.country}</div>
@@ -142,13 +138,18 @@ export const CharityDetail = () => {
           </div>
          
           <div className="usage-container">
+            <div className="donation-title">Donation options</div>
             {donationoptions.map((donation) => (
               <div 
-                className="donation-options"
                 key={donation.id}
               >
-                <div className="donation-amount">€{donation.amount}</div>
-                <div className="donation-description">{donation.description}</div>
+                <button 
+                  className="donation-options-button"
+                  type="button"
+                >
+                  <span className="donation-amount">€{donation.amount}</span>
+                  <span className="donation-description">{donation.description}</span>
+                </button>
               </div>
             ))}
           </div>
@@ -172,7 +173,7 @@ export const CharityDetail = () => {
           className="image-gallery-item"
           key={image.id}
         >
-          <img className="gallery-img" src={image.imagelink[2].url} /> 
+          <img className="gallery-image" src={image.imagelink[2].url} /> 
         </div>
         ))}
       </div>

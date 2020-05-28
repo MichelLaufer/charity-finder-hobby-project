@@ -7,7 +7,7 @@ const initialState = {
   charities: [], 
   // url: `https://api.globalgiving.org/api/public/projectservice/all/projects/active.json?api_key=${API_KEY}`,
   chosenCategory: "featured",
-  chosenCountry: ""
+  chosenCountry: "AF"
 }
 
 export const charities = createSlice({
@@ -28,7 +28,6 @@ export const charities = createSlice({
 
 export const searchResult = (searchTerm) => {
   return dispatch => {
-    dispatch(ui.actions.setLoading(true))
     const url = `https://api.globalgiving.org/api/public/services/search/projects&api_key=${API_KEY}&q=${searchTerm}`
     const newhead = new Headers({
       'Accept': 'application/json',
@@ -42,7 +41,6 @@ export const searchResult = (searchTerm) => {
     })
 
     fetch(req)
-      dispatch(ui.actions.setLoading(true))
       .then(res => res.json())
       .then(json => {
         dispatch(charities.actions.setSearchTerm(json.projects))

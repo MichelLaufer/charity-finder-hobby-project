@@ -46,7 +46,7 @@ export const CharityList = () => {
 
   if (loading) {
     return (
-      <div>Charity page is loading...</div>
+      <div className="loading-message">Charity page is loading...</div>
     )
   }
 
