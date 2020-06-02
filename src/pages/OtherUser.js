@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-// import { CharityCards } from '../components/CharityCards'
+import { CharityCards } from '../components/CharityCards'
 
 
 export const OtherUser = () => {
   const [addedFavorites, setAddedFavorites] = useState([])
   const [userName, setUserName] = useState("")
   const { userId } = useParams()
-  const myId = useSelector((state) => state.users.userId)
 
   useEffect(() => {
     fetch(`http://localhost:8081/users/${userId}/otherUser`)
@@ -26,9 +24,7 @@ export const OtherUser = () => {
       <div className="otheruser-name">{userName}'s favorite charities</div>
       <div>
         {addedFavorites.map((favorite) => (
-          <div>
-          <div>{favorite.projectTitle}</div>
-          </div>
+          <CharityCards key={favorite.projectId} id={favorite.projectId} />
         ))}
       </div>
     </div>

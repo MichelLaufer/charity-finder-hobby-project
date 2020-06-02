@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FavoriteStatus } from './FavoriteStatus'
+// import { DonationAmount } from './DonationAmount'
 
 const API_KEY = process.env.REACT_APP_API_KEY
 
@@ -48,6 +49,17 @@ export const CharityCards = ({ id }) => {
     )
   }
 
+     // Get a project's donation budget amount
+    //  useEffect(() => {
+    //   if (!userId) return;
+    //   fetch(`http://localhost:8081/users/${userId}/charities?donationAmount`)
+    //     .then(res => res.json())
+    //     .then(json => {
+    //       setDonationBudget(json)
+    //       console.log("donation budget:", json)
+    //     })
+    // }, [])
+
   
   return (
     <div 
@@ -69,3 +81,8 @@ export const CharityCards = ({ id }) => {
     </div>
   )
 }
+
+
+// <DonationAmount 
+//   projectId={project.id}
+// />

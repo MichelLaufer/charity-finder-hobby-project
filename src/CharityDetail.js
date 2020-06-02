@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import { FavoriteStatus } from './components/FavoriteStatus'
 import { ProgressBar } from './components/ProgressBar'
+import { users } from './reducers/users'
 
 const API_KEY = process.env.REACT_APP_API_KEY
 
@@ -15,6 +17,11 @@ export const CharityDetail = () => {
   const [loading, setLoading] = useState(true)
   const [organization, setOrganization] = useState([])
  
+  const [projectId, setProjectId] = useState()
+  const [projectTitle, setProjectTitle] = useState()
+  const [donationAmount, setDonationAmount] = useState() 
+  const accessToken = useSelector((state) => state.users.accessToken)
+  const userId = useSelector((state) => state.users.userId)
 
   const url = `https://api.globalgiving.org/api/public/projectservice/projects/${id}?api_key=${API_KEY}`
   const newhead = new Headers({
@@ -37,6 +44,8 @@ export const CharityDetail = () => {
       .then((json) => {
         setLoading(false)
         setProject(json.project)
+        setProjectId(json.project.id)
+        setProjectTitle(json.project.title)
         setDonationOptions(json.project.donationOptions.donationOption)
         setImage(json.project.image.imagelink[3])
         setOrganization(json.project.organization)
@@ -72,6 +81,16 @@ export const CharityDetail = () => {
     return (
       <div className="loading-message">Charity page is loading...</div>
     )
+  }
+
+  // Function that is invoced when the user clicks on a donation button
+  const handleDonation = (userId, projectTitle, donationAmount) => {
+    setDonationAmount(donationAmount)
+    fetch(`http://localhost:8081/users/${userId}`, {
+      method: "PUT",
+      body: JSON.stringify({ userId, projectId, projectTitle, donationAmount }),
+      headers: { "Content-Type": "application/json", "Authorization": accessToken}
+    })
   }
 
 
@@ -143,15 +162,36 @@ export const CharityDetail = () => {
               <div 
                 key={donation.id}
               >
-                <button 
-                  className="donation-options-button"
-                  type="button"
-                >
-                  <span className="donation-amount">€{donation.amount}</span>
-                  <span className="donation-description">{donation.description}</span>
-                </button>
+              <div
+                className="donation-options-button"
+              >
+                <span className="donation-amount">€{donation.amount}</span>
+                <span className="donation-description">{donation.description}</span>
+              </div>
               </div>
             ))}
+
+            <div>
+              <form className="donation-amount-form">
+                <label className="donation-amount-label">
+                <input
+                  className="donation-amount-input"
+                  type="text"
+                  value={donationAmount}
+                  onChange={event => setDonationAmount(event.target.value)}
+                  placeholder="Enter amount here (in EUR)..."
+                />
+                <button 
+                  className="button-budget"
+                  disabled={!accessToken}
+                  onClick={() => handleDonation(userId, projectTitle, donationAmount)}
+                >
+                  Add to budget
+                </button>
+                </label>
+              </form>
+            </div>
+
           </div>
 
           <FavoriteStatus projectId={project.id} projectTitle={project.title} />

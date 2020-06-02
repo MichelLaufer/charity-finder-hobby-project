@@ -31,8 +31,9 @@ code {
 /* Charity Cards ************************************/
 .card-img {
   height: 150px;
-  width: 200px;
+  width: 250px;
 }
+
 .charity-card-title {
   font-weight: bold;
   padding-left: 8vw;
@@ -42,23 +43,38 @@ code {
 
 .favorite-charity-card {
   border: 1px solid gray;
-  height: 150px;
+  height: 350px;
   margin: 10px;
   margin-left: 3vw;
-  padding-right: 8px;
-  width: 450px;
+  padding-right: 0;
+  width: 250px;
 }
 
 .wrap-charity-card {
   border-radius: 20px 0 0 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 
 /* CharityDetail ***********************************/
 .activities-title, .need-title, .summary-title  {
   font-weight: bold;
+}
+
+.button-budget {
+  background: orangered;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 8px 0;
+  margin-bottom: 0;
+  margin-left: 3vw;
+  margin-right: 6vw;
+  margin-top: 4vh;
+  padding: 14px 20px;
+  width: 200px;
 }
 
 .detail-highlight {
@@ -146,6 +162,52 @@ code {
   padding: 14px 20px;
   width: 200px;
 }
+
+.donation-amount-form {
+  background: white;
+  border-radius: 8px;
+  display: block;
+  margin: 60px auto;
+  margin-bottom: 3vh;
+  margin-top: 0;
+  max-width: 300px;
+  padding: 0;
+  /* @media(max-width: 500px) {
+   max-width: 35vh;
+  } */
+}
+
+.donation-amount-input {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: block;
+  margin: 8px 0;
+  padding: 0 10px;
+  width: 90%;
+  /* background: transparent;
+  border: none;
+  border: 1px solid transparent;
+  border-bottom: 1px solid black;
+  border-radius: 3px;
+  color: #333;
+  display: block;
+  font-size: 15px;
+  line-height: 50px;
+  margin: 10px 0px;
+  padding: 0 10px;
+  width: 90%;
+  z-index: 2; */
+}
+
+.donation-amount-label {
+  color: #666;
+  display: block;
+  font-size: 13px;
+  line-height: 1px;
+  padding: 10px;  
+}
+
 
 .funding-raised-of-goal {
   margin-bottom: 2vh;
@@ -306,7 +368,7 @@ code {
 }
 
 .charity-list-img {
-  max-height: 45vh;
+  max-height: 42vh;
   width: 80vw;
 }
 
@@ -338,6 +400,15 @@ code {
   margin-top: 1vh;
 }
 
+
+/* Donation amount *************************************************/
+.donation-amount {
+  text-align: center;
+}
+
+.donation-zero {
+  display: none;
+}
 
 /* DropDownList.js *************************************************/
 .category-dropdown label {
@@ -426,7 +497,7 @@ code {
   font-size: 18px;
   margin: 8px 0;
   margin-bottom: 8vh;
-  margin-left: 14vw;
+  margin-left: 7vw;
   margin-right: 6vw;
   margin-top: 4vh;
   padding: 14px 20px;
@@ -757,6 +828,9 @@ label {
   margin-left: 3vw;
   width: 55vw;
 }
+.wrap-charity-card {
+  flex-direction: row;
+}
 
 
 /* Charity Detail ************************************************/
@@ -870,6 +944,7 @@ label {
 /* Favorite Status *********************************************/
 .button-favorite {
   margin-left: 8vw;
+  margin-right: 6vw;
 }
 
 

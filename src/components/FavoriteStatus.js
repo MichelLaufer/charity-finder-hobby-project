@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 
-export const FavoriteStatus = ({ projectId, projectTitle}) => {
+export const FavoriteStatus = ({ projectId, projectTitle }) => {
   const accessToken = useSelector((state) => state.users.accessToken)
   const userId = useSelector((state) => state.users.userId)
   const [favoriteStatus, setFavoriteStatus] = useState()
