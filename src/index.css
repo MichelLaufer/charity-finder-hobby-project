@@ -390,9 +390,9 @@ code {
 .donation-amount {
   color: white;
   background: orange;
-  margin-bottom: 2vh;
-  margin-left: 12vw;
-  text-align: center;
+  /* margin-bottom: 2vh; */
+  /* margin-left: 12vw; */
+  /* text-align: center; */
   width: 100px;
 }
 
