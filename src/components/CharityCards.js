@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FavoriteStatus } from './FavoriteStatus'
-// import { DonationAmount } from './DonationAmount'
+import { DonationAmount } from './DonationAmount'
 
 const API_KEY = process.env.REACT_APP_API_KEY
 
@@ -73,6 +73,10 @@ export const CharityCards = ({ id }) => {
         <div className="wrap-charity-card-info">
           <div className="charity-card-title">{project.title}</div>
           <FavoriteStatus 
+            projectId={project.id}
+            projectTitle={project.title}
+          />
+          <DonationAmount 
             projectId={project.id}
             projectTitle={project.title}
           />

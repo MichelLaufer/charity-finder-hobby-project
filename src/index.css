@@ -148,21 +148,6 @@ code {
   margin-left: 6vw;
 }
 
-.favorites-button {
-  background: brown;
-  border: none;
-  color: white;
-  cursor: pointer;
-  font-size: 18px;
-  margin: 8px 0;
-  margin-bottom: 8vh;
-  margin-left: 6vw;
-  margin-right: 6vw;
-  margin-top: 4vh;
-  padding: 14px 20px;
-  width: 200px;
-}
-
 .donation-amount-form {
   background: white;
   border-radius: 8px;
@@ -403,7 +388,12 @@ code {
 
 /* Donation amount *************************************************/
 .donation-amount {
+  color: white;
+  background: orange;
+  margin-bottom: 2vh;
+  margin-left: 12vw;
   text-align: center;
+  width: 100px;
 }
 
 .donation-zero {
@@ -494,14 +484,14 @@ code {
   border: none;
   color: white;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
   margin: 8px 0;
   margin-bottom: 8vh;
   margin-left: 7vw;
   margin-right: 6vw;
   margin-top: 4vh;
   padding: 14px 20px;
-  width: 200px;
+  width: 220px;
 }
 
 

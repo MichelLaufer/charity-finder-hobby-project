@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { FavoriteStatus } from './components/FavoriteStatus'
 import { ProgressBar } from './components/ProgressBar'
-import { users } from './reducers/users'
 
 const API_KEY = process.env.REACT_APP_API_KEY
 
@@ -20,6 +19,7 @@ export const CharityDetail = () => {
   const [projectId, setProjectId] = useState()
   const [projectTitle, setProjectTitle] = useState()
   const [donationAmount, setDonationAmount] = useState() 
+  const [donationBudget, setDonationBudget] = useState()
   const accessToken = useSelector((state) => state.users.accessToken)
   const userId = useSelector((state) => state.users.userId)
 
@@ -84,11 +84,12 @@ export const CharityDetail = () => {
   }
 
   // Function that is invoced when the user clicks on a donation button
-  const handleDonation = (userId, projectTitle, donationAmount) => {
+  const handleDonation = (userId, projectId, projectTitle, donationAmount, donationBudget) => {
     setDonationAmount(donationAmount)
+    setDonationBudget(donationBudget)
     fetch(`http://localhost:8081/users/${userId}`, {
       method: "PUT",
-      body: JSON.stringify({ userId, projectId, projectTitle, donationAmount }),
+      body: JSON.stringify({ userId, projectId, projectTitle, donationAmount, donationBudget }),
       headers: { "Content-Type": "application/json", "Authorization": accessToken}
     })
   }
@@ -184,7 +185,7 @@ export const CharityDetail = () => {
                 <button 
                   className="button-budget"
                   disabled={!accessToken}
-                  onClick={() => handleDonation(userId, projectTitle, donationAmount)}
+                  onClick={() => handleDonation(userId, projectId, projectTitle, donationAmount, !donationBudget)}
                 >
                   Add to budget
                 </button>

@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 export const DonationAmount = ({ projectId }) => {
   const userId = useSelector((state) => state.users.userId)
   const [donationBudget, setDonationBudget] = useState()
+  const [showDonationBudget, setShowDonationBudget] = useState(false)
 
   // Get a project's donation budget amount
   useEffect(() => {
@@ -12,17 +13,23 @@ export const DonationAmount = ({ projectId }) => {
     fetch(`http://localhost:8081/users/${userId}/charities?projectId=${projectId}`)
       .then(res => res.json())
       .then(json => {
-        if (json && json.donationAmount) {
+        if (json && json.donationBudget) {
           setDonationBudget(json.donationAmount)
+          setShowDonationBudget(true)
         } else if (json && !json.donationAmount) {
           setDonationBudget(false)
+          setShowDonationBudget(false)
         }
       })
     }, [projectId])
 
     return (
-        <div className="donation-amount">
-          {donationBudget}
-        </div>
+      <div>
+        {showDonationBudget && (
+          <div className="donation-amount">
+            {donationBudget} EUR 💶
+          </div>
+        )}
+      </div>
     )
 }

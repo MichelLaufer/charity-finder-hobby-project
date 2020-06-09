@@ -55,7 +55,7 @@ export const UserFavorites = () => {
    // Get a project's donation budget amount
    useEffect(() => {
     if (!userId) return;
-    fetch(`http://localhost:8081/users/${userId}/charities?donationAmount=`)
+    fetch(`http://localhost:8081/users/${userId}/charities?donationBudget=true`)
       .then(res => res.json())
       .then(json => {
         setDonationBudget(json)
@@ -93,8 +93,8 @@ export const UserFavorites = () => {
       {donationBudget && donationBudget.message && (
         <div className="error-message">`No projects added to your favorites</div>
       )}
-      
       </div>
+      
     </>
   )
 }
