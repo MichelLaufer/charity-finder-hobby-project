@@ -101,8 +101,7 @@ export const CharityDetail = () => {
       className="project-detail-background"
     >
       <h2 className="project-detail-title">{project.title}</h2>
-      <h3 className="project-detail-org-name">by {organization.name}</h3>
-
+      <h3 className="project-detail-org-name">by <a className="org-link" href={organization.url} target="_blank" rel="noopener noreferrer"><span className="project-detail-org-title">{organization.name}</span></a></h3>
       <div className="project-detail-container">
         <div className="left-container">
           <img className="project-img" src={image.url} /> 
@@ -110,7 +109,7 @@ export const CharityDetail = () => {
             <div className="info-container">
               <div className="project-detail-summary">
                 <span className="summary-title">Summary</span>
-                <br></br> 
+                <br></br>
                 {project.summary}
               </div>
       

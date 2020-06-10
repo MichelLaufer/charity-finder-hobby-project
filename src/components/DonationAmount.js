@@ -26,7 +26,7 @@ export const DonationAmount = ({ projectId }) => {
     return (
       <div>
         {showDonationBudget && (
-          <div className="donation-amount">
+          <div className="donation-amount-box">
             {donationBudget} EUR 💶
           </div>
         )}

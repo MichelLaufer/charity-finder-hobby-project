@@ -148,6 +148,10 @@ code {
   margin-left: 6vw;
 }
 
+.donation-amount {
+  text-align: center;
+}
+
 .donation-amount-form {
   background: white;
   border-radius: 8px;
@@ -192,7 +196,6 @@ code {
   line-height: 1px;
   padding: 10px;  
 }
-
 
 .funding-raised-of-goal {
   margin-bottom: 2vh;
@@ -305,8 +308,14 @@ code {
 }
 
 .project-detail-org-name {
+  font-weight: normal;
   margin-bottom: 6vh;
   margin-left: 10vw;
+}
+
+.project-detail-org-title {
+  color: lightcoral;
+  font-weight: bold;
 }
 
 .project-detail-title {
@@ -387,13 +396,12 @@ code {
 
 
 /* Donation amount *************************************************/
-.donation-amount {
+.donation-amount-box {
   color: white;
   background: orange;
-  /* margin-bottom: 2vh; */
-  /* margin-left: 12vw; */
-  /* text-align: center; */
-  width: 100px;
+  margin-left: 12vw;
+  text-align: center;
+  width: 120px;
 }
 
 .donation-zero {
@@ -486,10 +494,10 @@ code {
   cursor: pointer;
   font-size: 16px;
   margin: 8px 0;
-  margin-bottom: 8vh;
+  margin-bottom: 6vh;
   margin-left: 7vw;
   margin-right: 6vw;
-  margin-top: 4vh;
+  margin-top: 5vh;
   padding: 14px 20px;
   width: 220px;
 }
@@ -885,6 +893,7 @@ label {
   margin-left: 20vw;
 }
 .project-detail-title {
+  font-size: 26px; 
   margin-left: 20vw;
 }
 .project-img {

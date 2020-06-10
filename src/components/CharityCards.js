@@ -43,9 +43,9 @@ export const CharityCards = ({ id }) => {
   }, [id])
 
 
-  if(loading) {
+  if (loading) {
     return (
-      <div>Charity page is loading...</div>
+      <div>Charity card is loading...</div>
     )
   }
 
