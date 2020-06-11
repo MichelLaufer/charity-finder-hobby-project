@@ -56,10 +56,14 @@ export const CharityList = () => {
     )
   }
 
-  let charitiesResults = charities.slice(0,9)
-  if (searchResult.length > 0) {
-    charitiesResults = searchResult
+  console.log("Charities", charities)
+  console.log("Search results", searchResult)
+
+  let charitiesResults = charities
+  if (searchResult.project && searchResult.project.length > 0) {
+    charitiesResults = searchResult.project
   }
+  console.log("Charities Results", charitiesResults)
 
   return (
     <>

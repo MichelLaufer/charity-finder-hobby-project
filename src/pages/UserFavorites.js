@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { ui } from '../reducers/ui'
+import { useSelector } from 'react-redux'
 import { CharityCards } from '../components/CharityCards'
+import { BudgetForm } from '../components/BudgetForm'
+import { BudgetGet } from '../components/BudgetGet'
 
 const url = "http://localhost:8081/secrets"
 
@@ -93,6 +94,11 @@ export const UserFavorites = () => {
       {donationBudget && donationBudget.message && (
         <div className="error-message">`No projects added to your favorites</div>
       )}
+      </div>
+
+      <div>
+        <BudgetForm />
+        <BudgetGet />
       </div>
       
     </>

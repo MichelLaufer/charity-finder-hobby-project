@@ -9,9 +9,7 @@ const API_KEY = process.env.REACT_APP_API_KEY
 export const CharityCards = ({ id }) => {
   // const [project, setProject] = useState([])
   const [project, setProject] = useState([])
-  const [donationoptions, setDonationOptions] = useState([])
   const [image, setImage] = useState([])
-  const [error, setError] = useState("")
   const [loading, setLoading] = useState("")
   const [organization, setOrganization] = useState([])
 
@@ -36,7 +34,6 @@ export const CharityCards = ({ id }) => {
       .then((json) => {
         setLoading(false)
         setProject(json.project)
-        setDonationOptions(json.project.donationOptions.donationOption)
         setImage(json.project.image.imagelink[2])
         setOrganization(json.project.organization)
       })  

@@ -19,17 +19,17 @@ export const DonationBudget = ({ projectId, projectTitle, donationOption, donati
 
 
   return (
-    <>
       <div>
         <button 
           className="donation-options-button"
           disabled={!accessToken}
-          onClick={() => handleDonation(userId, projectTitle, donationAmount)}
+          onClick={(e) => {
+            e.preventDefault()
+            handleDonation(userId, projectTitle, donationAmount)}}
         >
         <span className="donation-amount">€{donationOption}</span>
         <span className="donation-description">{donationDescription}</span>
         </button>
       </div>
-    </>
   )
 }

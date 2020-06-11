@@ -28,7 +28,7 @@ export const charities = createSlice({
 
 export const searchResult = (searchTerm) => {
   return dispatch => {
-    const url = `https://api.globalgiving.org/api/public/services/search/projects&api_key=${API_KEY}&q=${searchTerm}`
+    const url = `https://api.globalgiving.org/api/public/services/search/projects?api_key=${API_KEY}&q=${searchTerm}`
     const newhead = new Headers({
       'Accept': 'application/json',
       'Access-Control-Allow-Origin': '*',
@@ -43,7 +43,8 @@ export const searchResult = (searchTerm) => {
     fetch(req)
       .then(res => res.json())
       .then(json => {
-        dispatch(charities.actions.setSearchTerm(json.projects))
+        console.log(json)
+        dispatch(charities.actions.setSearchTerm(json.search.response.projects))
         dispatch(ui.actions.setLoading(false))
       })
   }
