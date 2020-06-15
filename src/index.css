@@ -759,7 +759,7 @@ label {
   margin-bottom: 10px;
   margin-left: 4vw;
   margin-top: 0;
-  max-width: 480px;
+  width: 250px;
 }
 
 .search-line {

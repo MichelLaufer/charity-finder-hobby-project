@@ -86,7 +86,11 @@ export const CharityDetail = () => {
   // Function that is invoced when the user clicks on a donation button
   const handleDonation = (userId, projectId, projectTitle, donationAmount, donationBudget) => {
     setDonationAmount(donationAmount)
-    setDonationBudget(donationBudget)
+    if (donationAmount > 0) {
+      setDonationBudget(true)
+    } else {
+      setDonationBudget(false)
+    }
     fetch(`http://localhost:8081/users/${userId}`, {
       method: "PUT",
       body: JSON.stringify({ userId, projectId, projectTitle, donationAmount, donationBudget }),
@@ -184,7 +188,7 @@ export const CharityDetail = () => {
                 <button 
                   className="button-budget"
                   disabled={!accessToken}
-                  onClick={() => handleDonation(userId, projectId, projectTitle, donationAmount, !donationBudget)}
+                  onClick={() => handleDonation(userId, projectId, projectTitle, donationAmount, donationBudget)}
                 >
                   Add to budget
                 </button>

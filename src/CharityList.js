@@ -59,14 +59,13 @@ export const CharityList = () => {
   console.log("Charities", charities)
   console.log("Search results", searchResult)
 
-  let charitiesResults = charities
+  let charitiesResults = charities.slice(0,9)
   if (searchResult.project && searchResult.project.length > 0) {
-    charitiesResults = searchResult.project
+    charitiesResults = searchResult.project.slice(0,9)
   }
   console.log("Charities Results", charitiesResults)
 
   return (
-    <>
     <section>
       <div className="hero-image"></div>
       <div className="charity-list-top-wrapper">
@@ -97,7 +96,6 @@ export const CharityList = () => {
         ))}
       </section>
     </section>
-    </>
   )
 }
 
