@@ -17,7 +17,7 @@ export const Navbar = () => {
       <div className="navbar-header-container">
         <Hamburger />
         <h1 className="navbar-header-title">
-          <Link to={`/`}>Make the world better...</Link>
+          <Link to={`/`}>Make the world better</Link>
         </h1>
         <Searchbar />
 
