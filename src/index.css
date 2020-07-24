@@ -385,7 +385,7 @@ code {
   overflow: hidden;
   overflow-wrap: break-word;
   word-wrap: break-word;
-  -webkit-line-clamp: 7;
+  -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
 }
 
@@ -921,7 +921,7 @@ label {
   padding-left: 0;
 }
 .charity-list-img {
-  max-height: 45vh;
+  max-height: 40vh;
   width: 30vw;
 }
 .charity-list-top-wrapper {
