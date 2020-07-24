@@ -108,7 +108,7 @@ export const CharityDetail = () => {
       <h3 className="project-detail-org-name">by <a className="org-link" href={organization.url} target="_blank" rel="noopener noreferrer"><span className="project-detail-org-title">{organization.name}</span></a></h3>
       <div className="project-detail-container">
         <div className="left-container">
-          <img className="project-img" src={image.url} /> 
+          <img className="project-img" src={image.url} alt="Charity project" /> 
           <div className="info-and-usage-wrap">
             <div className="info-container">
               <div className="project-detail-summary">
@@ -140,7 +140,7 @@ export const CharityDetail = () => {
         <div className="organization-container">
           <h3 className="org-info-title">Organization information</h3>
           <div>
-            <img src={organization.logoUrl} />
+            <img src={organization.logoUrl} alt="Organization logo"/>
             <h3 className="org-name">{organization.name}</h3>
           </div>
           <div><span className="detail-highlight">Location:</span> {organization.city}, {organization.country}</div>
@@ -217,7 +217,7 @@ export const CharityDetail = () => {
           className="image-gallery-item"
           key={image.id}
         >
-          <img className="gallery-image" src={image.imagelink[2].url} /> 
+          <img className="gallery-image" src={image.imagelink[2].url} alt="Charity"/> 
         </div>
         ))}
       </div>

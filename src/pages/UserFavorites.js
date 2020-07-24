@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { CharityCards } from '../components/CharityCards'
-import { BudgetForm } from '../components/BudgetForm'
-import { BudgetGet } from '../components/BudgetGet'
+// import { BudgetForm } from '../components/BudgetForm'
+// import { BudgetGet } from '../components/BudgetGet'
 
 const url = "http://localhost:8081/secrets"
 
@@ -51,7 +51,7 @@ export const UserFavorites = () => {
         setProjectStatus(json)
         console.log("favorite status:", json)
       })
-  }, [])
+  }, [userId])
 
    // Get a project's donation budget amount
    useEffect(() => {
@@ -62,7 +62,7 @@ export const UserFavorites = () => {
         setDonationBudget(json)
         console.log("donation budget:", json)
       })
-  }, [])
+  }, [userId])
 
   
   return (
@@ -78,7 +78,7 @@ export const UserFavorites = () => {
         )}
 
         {projectStatus && projectStatus.message && (
-          <div className="error-message">`No projects added to your favorites</div>
+          <div className="error-message">No projects added to your favorites</div>
         )}
       </div>
 
@@ -92,13 +92,8 @@ export const UserFavorites = () => {
       )}
 
       {donationBudget && donationBudget.message && (
-        <div className="error-message">`No projects added to your favorites</div>
+        <div className="error-message">No projects added to your favorites</div>
       )}
-      </div>
-
-      <div>
-        <BudgetForm />
-        <BudgetGet />
       </div>
       
     </>
@@ -106,6 +101,11 @@ export const UserFavorites = () => {
 }
 
 // <div>Your donation budget: 1000 EUR</div>
+
+      // <div>
+      //   <BudgetForm />
+      //   <BudgetGet />
+      // </div>
 
 // useEffect(() => {
 //   if (!userId) return;

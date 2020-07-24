@@ -12,7 +12,7 @@ export const BudgetGet = () => {
       .then(json => {
         setBudget(json)
       })
-  },[budget])
+  },[userId])
   
 
   return (

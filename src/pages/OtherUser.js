@@ -21,7 +21,9 @@ export const OtherUser = () => {
 
   return (
     <div className="otheruser-wrap">
-      <div className="otheruser-name">{userName}'s favorite charities</div>
+      {userName && (
+        <div className="otheruser-name">{userName}'s favorite charities</div>
+      )}
       <div>
         {addedFavorites.map((favorite) => (
           <CharityCards key={favorite.projectId} id={favorite.projectId} />

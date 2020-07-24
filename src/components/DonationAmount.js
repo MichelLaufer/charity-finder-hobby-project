@@ -21,7 +21,7 @@ export const DonationAmount = ({ projectId }) => {
           setShowDonationBudget(false)
         }
       })
-    }, [projectId])
+    }, [userId, projectId])
 
     return (
       <div>

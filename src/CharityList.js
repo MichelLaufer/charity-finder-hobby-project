@@ -82,6 +82,7 @@ export const CharityList = () => {
               <img 
                 className="charity-list-img" 
                 src={charity.image.imagelink[3].url} 
+                alt="charity project"
               />
             </Link>
             <div className="charity-card-text-container">

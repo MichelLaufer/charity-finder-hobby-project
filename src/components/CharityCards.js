@@ -7,7 +7,6 @@ const API_KEY = process.env.REACT_APP_API_KEY
 
 
 export const CharityCards = ({ id }) => {
-  // const [project, setProject] = useState([])
   const [project, setProject] = useState([])
   const [image, setImage] = useState([])
   const [loading, setLoading] = useState("")
@@ -65,7 +64,11 @@ export const CharityCards = ({ id }) => {
     >
       <div className="wrap-charity-card">
         <Link key={project.id} to={`/charities/${project.id}`}>
-          <img className="card-img" src={image.url} />
+          <img 
+            className="card-img" 
+            src={image.url} 
+            alt="Charity"
+          />
         </Link>
         <div className="wrap-charity-card-info">
           <div className="charity-card-title">{project.title}</div>

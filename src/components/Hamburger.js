@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { LogoutStatic } from './Logout'
 import { charities } from '../reducers/charities'
@@ -9,9 +9,7 @@ import styled from 'styled-components/macro'
 
 
 export const Menu = ({ open, setOpen }) => {
-  const selectedTab = useSelector((state) => state.ui.tab)
   const dispatch = useDispatch()
-
   const handleTabChange = (tab) => {
     dispatch(ui.actions.setTab(tab))
     dispatch(ui.actions.setPage(1))
@@ -23,13 +21,13 @@ return (
     <Link to="/"
       onClick={() => { handleTabChange("charities"); dispatch(charities.actions.setSearchTerm("")); setOpen(!open)}}
     >
-      🎗Projects
+      <span role="img" aria-label="menu-item-icon">🎗</span>Projects
     </Link>
 
     <Link to="/myfavorites"
       onClick={() => { handleTabChange("favorites"); setOpen(!open)}}
     >
-      ❤️My favorites
+      <span role="img" aria-label="menu-item-icon">❤️</span>My favorites
     </Link>
 
     <Link to="/userlist"
@@ -41,13 +39,13 @@ return (
     <Link to="/login"
       onClick={() => { handleTabChange("login"); setOpen(!open)}}
     >
-      ☑️Sign in
+      <span role="img" aria-label="menu-item-icon">☑️</span>Sign in
     </Link>
 
     <Link to="/register"
       onClick={() => { handleTabChange("register"); setOpen(!open)}}
     >
-      📝Register
+      <span role="img" aria-label="menu-item-icon">📝</span>Register
     </Link>
 
     <Link to="/about"
@@ -59,7 +57,7 @@ return (
     <Link
       onClick={() => setOpen(!open)}
     >
-      ❌<LogoutStatic />
+      <span role="img" aria-label="menu-item-icon">❌</span><LogoutStatic />
     </Link>
   </StyledMenu>
 )

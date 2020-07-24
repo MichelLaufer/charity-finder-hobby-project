@@ -29,7 +29,7 @@ export const FavoriteStatus = ({ projectId, projectTitle }) => {
           setFavoriteStatus(false)
         }
       })
-  }, [projectId])
+  }, [userId, projectId])
 
   return (
     <>
