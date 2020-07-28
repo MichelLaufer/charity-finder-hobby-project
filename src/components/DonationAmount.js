@@ -9,7 +9,7 @@ export const DonationAmount = ({ projectId }) => {
 
   // Get a project's donation budget amount
   useEffect(() => {
-    if (!userId) return;
+    if (!userId || !projectId) return;
     fetch(`http://localhost:8081/users/${userId}/charities?projectId=${projectId}`)
       .then(res => res.json())
       .then(json => {

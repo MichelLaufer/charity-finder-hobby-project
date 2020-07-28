@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { CharityCards } from '../components/CharityCards'
-// import { BudgetForm } from '../components/BudgetForm'
-// import { BudgetGet } from '../components/BudgetGet'
+import { BudgetForm } from '../components/BudgetForm'
+import { BudgetGet } from '../components/BudgetGet'
+import { users } from '../reducers/users'
 
 const url = "http://localhost:8081/secrets"
 
 
 export const UserFavorites = () => {
+  const dispatch = useDispatch()
   const [message, setMessage] = useState("")
   const [error, setError] = useState("")
   const [errorMessage, setErrorMessage] = useState("")
@@ -64,6 +66,15 @@ export const UserFavorites = () => {
       })
   }, [userId])
 
+  // Get a user's budget
+  useEffect(() => {
+    fetch (`http://localhost:8081/users/${userId}/budget`)
+      .then(res => res.json())
+      .then(budget => {
+        dispatch(users.actions.setUserBudget(budget))
+      })
+  },[])
+
   
   return (
     // Favorites
@@ -94,6 +105,11 @@ export const UserFavorites = () => {
       {donationBudget && donationBudget.message && (
         <div className="error-message">No projects added to your favorites</div>
       )}
+
+      <div>
+        <BudgetForm />
+        <BudgetGet />
+      </div>
       </div>
       
     </>
@@ -102,10 +118,7 @@ export const UserFavorites = () => {
 
 // <div>Your donation budget: 1000 EUR</div>
 
-      // <div>
-      //   <BudgetForm />
-      //   <BudgetGet />
-      // </div>
+
 
 // useEffect(() => {
 //   if (!userId) return;

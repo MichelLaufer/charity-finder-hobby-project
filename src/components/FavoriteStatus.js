@@ -19,7 +19,7 @@ export const FavoriteStatus = ({ projectId, projectTitle }) => {
 
   // Get a project's favorite status
   useEffect(() => {
-    if (!userId) return;
+    if (!userId || !projectId) return;
     fetch(`http://localhost:8081/users/${userId}/charities?projectId=${projectId}`)
       .then(res => res.json())
       .then(json => {

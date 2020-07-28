@@ -6,7 +6,8 @@ const initialState = {
   users: [],
   userName: localStorage.userName || "",
   accessToken: localStorage.accessToken || "",
-  userId: localStorage.userId || ""
+  userId: localStorage.userId || "",
+  userBudget: null
 }
 
 
@@ -40,6 +41,9 @@ export const users = createSlice({
     },
     setUser: (state, action) => {
       state.users = action.payload
+    },
+    setUserBudget: (state, action) => {
+      state.userBudget = action.payload
     }
   }
 })
