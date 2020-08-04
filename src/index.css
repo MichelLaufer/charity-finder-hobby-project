@@ -28,6 +28,24 @@ code {
 }
 
 
+/* Budget Get ***************************************/
+.budget-total {
+  background: white;
+  border-radius: 8px;
+  display: block;
+  font-size: 22px;
+  margin: 60px auto;
+  margin-bottom: 3vh;
+  margin-top: 0;
+  max-width: 400px;
+  padding: 0;
+}
+
+.budget-total-highlight {
+  font-weight: bold;
+}
+
+
 /* Charity Cards ************************************/
 .card-img {
   height: 150px;
@@ -776,7 +794,12 @@ label {
 }
 
 
+
 /* User Favorites *********************************************/
+.error-message {
+ margin-left: 3vw; 
+}
+
 .your-favorites {
   font-size: 24px;
   font-weight: bold;
@@ -824,7 +847,7 @@ label {
   margin: 10px;
   margin-bottom: 5vh;
   margin-left: 3vw;
-  width: 55vw;
+  width: 60vw;
 }
 .wrap-charity-card {
   flex-direction: row;

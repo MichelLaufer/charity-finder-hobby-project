@@ -1,9 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 
 
 export const BudgetGet = () => {
   const budget = useSelector((state) => state.users.userBudget)
+
+  if (!budget) return null
+  
+
+  return (
+    <div className="budget-total">
+      Your total budget is currently <span className="budget-total-highlight">{budget} EUR</span>
+    </div>
+  )
+}
+
+
+
   // const userId = useSelector((state) => state.users.userId)
   // const [budget, setBudget] = useState(null)
 
@@ -14,13 +27,3 @@ export const BudgetGet = () => {
   //       setBudget(json)
   //     })
   // },[userId])
-
-  if (!budget) return null
-  
-
-  return (
-    <div>
-      {budget}
-    </div>
-  )
-}

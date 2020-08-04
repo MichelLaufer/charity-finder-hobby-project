@@ -7,7 +7,7 @@ const API_KEY = process.env.REACT_APP_API_KEY
 
 
 export const CharityCards = ({ id }) => {
-  const [project, setProject] = useState([])
+  const [project, setProject] = useState({})
   const [image, setImage] = useState([])
   const [loading, setLoading] = useState("")
   const [organization, setOrganization] = useState([])
@@ -33,8 +33,10 @@ export const CharityCards = ({ id }) => {
       .then((json) => {
         setLoading(false)
         setProject(json.project)
+        {json.project && (
         setImage(json.project.image.imagelink[2])
-        setOrganization(json.project.organization)
+        )}
+        // setOrganization(json.project.organization)
       })  
   }, [id])
 
@@ -56,7 +58,9 @@ export const CharityCards = ({ id }) => {
     //     })
     // }, [])
 
-  
+  if (!project) return null; 
+  console.log(project)
+
   return (
     <div 
       className="favorite-charity-card"

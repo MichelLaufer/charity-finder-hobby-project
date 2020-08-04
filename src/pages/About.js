@@ -3,7 +3,9 @@ import React from 'react'
 export const About = () => {
   return (
     <div className="about">
-      Hello! My name is Michel Elmoznino Laufer. 
+      Hello! 
+      <br></br><br></br>
+      My name is Michel Elmoznino Laufer. 
       <br></br><br></br>
       I am a junior frontend developer with a background as a
       researcher on start-ups.

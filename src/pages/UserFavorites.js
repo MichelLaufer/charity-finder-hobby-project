@@ -55,7 +55,7 @@ export const UserFavorites = () => {
       })
   }, [userId])
 
-   // Get a project's donation budget amount
+   // Charities with a positive donation amount
    useEffect(() => {
     if (!userId) return;
     fetch(`http://localhost:8081/users/${userId}/charities?donationBudget=true`)
@@ -97,18 +97,18 @@ export const UserFavorites = () => {
         {errorMessage && <div>{errorMessage}</div>}
         {!errorMessage && <div className="your-favorites">Charity projects added to budget</div>}
         {donationBudget && !donationBudget.message && (
-          donationBudget.map((project) => (
-          <CharityCards key={project.projectId} id={project.projectId} />
+          donationBudget.map((charity) => (
+          <CharityCards key={charity.projectId} id={charity.projectId} />
         ))
       )}
 
       {donationBudget && donationBudget.message && (
-        <div className="error-message">No projects added to your favorites</div>
+        <div className="error-message">No projects added to your budget</div>
       )}
 
       <div>
-        <BudgetForm />
         <BudgetGet />
+        <BudgetForm />
       </div>
       </div>
       
@@ -116,7 +116,7 @@ export const UserFavorites = () => {
   )
 }
 
-// <div>Your donation budget: 1000 EUR</div>
+
 
 
 

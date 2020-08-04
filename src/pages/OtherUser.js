@@ -25,7 +25,7 @@ export const OtherUser = () => {
         <div className="otheruser-name">{userName}'s favorite charities</div>
       )}
       <div>
-        {addedFavorites.map((favorite) => (
+        {addedFavorites && addedFavorites.map((favorite) => (
           <CharityCards key={favorite.projectId} id={favorite.projectId} />
         ))}
       </div>

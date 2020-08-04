@@ -29,7 +29,7 @@ export const Searchbar = () => {
       onChange={event => setSearchTerm(event.target.value)}
       disabled={false}
       large={true}
-      placeholder='🔍Search country or theme...'
+      placeholder='Search country or theme...🔍'
       leftIcon={<Icon icon="search" />}
       small={false}
       type="search"

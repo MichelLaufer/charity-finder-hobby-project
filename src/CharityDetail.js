@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { FavoriteStatus } from './components/FavoriteStatus'
 import { ProgressBar } from './components/ProgressBar'
+import { DonationSend } from 'components/DonationSend'
 
 const API_KEY = process.env.REACT_APP_API_KEY
 
@@ -84,7 +85,8 @@ export const CharityDetail = () => {
   }
 
   // Function that is invoced when the user clicks on a donation button
-  const handleDonation = (userId, projectId, projectTitle, donationAmount, donationBudget) => {
+  const handleDonation = (event, userId, projectId, projectTitle, donationAmount, donationBudget) => {
+    event.preventDefault()
     setDonationAmount(donationAmount)
     if (donationAmount > 0) {
       setDonationBudget(true)
@@ -175,26 +177,8 @@ export const CharityDetail = () => {
               </div>
             ))}
 
-            <div>
-              <form className="donation-amount-form">
-                <label className="donation-amount-label">
-                <input
-                  className="donation-amount-input"
-                  type="text"
-                  value={donationAmount}
-                  onChange={event => setDonationAmount(event.target.value)}
-                  placeholder="Enter amount here (in EUR)..."
-                />
-                <button 
-                  className="button-budget"
-                  disabled={!accessToken}
-                  onClick={() => handleDonation(userId, projectId, projectTitle, donationAmount, donationBudget)}
-                >
-                  Add to budget
-                </button>
-                </label>
-              </form>
-            </div>
+
+          <DonationSend projectId={project.id} projectTitle={project.title} />
 
           </div>
 
@@ -225,6 +209,32 @@ export const CharityDetail = () => {
     </div>
   )
 }
+
+
+
+
+// <div>
+// <form className="donation-amount-form">
+//   <label className="donation-amount-label">
+//   <input
+//     className="donation-amount-input"
+//     type="text"
+//     value={donationAmount}
+//     onChange={event => setDonationAmount(event.target.value)}
+//     placeholder="Enter amount here (in EUR)..."
+//   />
+//   <button 
+//     className="button-budget"
+//     disabled={!accessToken}
+//     onClick={(event) => handleDonation(userId, project.id, project.title, donationAmount, donationBudget)}
+//   >
+//     Add to budget
+//   </button>
+//   </label>
+// </form>
+// </div>
+
+
 
 
 // <button className="favorites-button">Add to favorites</button>
