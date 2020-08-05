@@ -25,6 +25,7 @@ export const Searchbar = () => {
       onSubmit={handleSubmit}
     >
     <input 
+      className="searchbar-input"
       value={searchTerm}
       onChange={event => setSearchTerm(event.target.value)}
       disabled={false}

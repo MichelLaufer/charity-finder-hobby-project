@@ -34,27 +34,22 @@ export const Navbar = () => {
 
       <div className="subnavbar">
         <h3 className="subnavbar-item">
-          <Link to={`/`}>Projects</Link>
+          <Link to={`/`}><div className="navbar-link">Projects</div></Link>
         </h3>
 
         <h3 className="subnavbar-item">
-          <Link to={`/myfavorites`}>My favorites</Link>
+          <Link to={`/myfavorites`}><div className="navbar-link">My favorites</div></Link>
         </h3>
 
         <h3 className="subnavbar-item">
-          <Link to={`/userlist`}>Other users</Link>
+          <Link to={`/userlist`}><div className="navbar-link">Other users</div></Link>
         </h3>
 
         <h3 className="subnavbar-item">
-          <Link to={`/about`}>About</Link>
+          <Link to={`/about`}><div className="navbar-link">About</div></Link>
         </h3>
 
       </div>
     </>
   )
 }
-
-
-// <h3 className="subnavbar-item">
-// <Link to={`/searchprojects`}>Search projects</Link>
-// </h3>

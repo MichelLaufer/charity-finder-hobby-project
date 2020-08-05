@@ -19,10 +19,10 @@ export const CharityDetail = () => {
  
   const [projectId, setProjectId] = useState()
   const [projectTitle, setProjectTitle] = useState()
-  const [donationAmount, setDonationAmount] = useState() 
-  const [donationBudget, setDonationBudget] = useState()
-  const accessToken = useSelector((state) => state.users.accessToken)
-  const userId = useSelector((state) => state.users.userId)
+  // const [donationAmount, setDonationAmount] = useState() 
+  // const [donationBudget, setDonationBudget] = useState()
+  // const accessToken = useSelector((state) => state.users.accessToken)
+  // const userId = useSelector((state) => state.users.userId)
 
   const url = `https://api.globalgiving.org/api/public/projectservice/projects/${id}?api_key=${API_KEY}`
   const newhead = new Headers({
@@ -84,21 +84,6 @@ export const CharityDetail = () => {
     )
   }
 
-  // Function that is invoced when the user clicks on a donation button
-  const handleDonation = (event, userId, projectId, projectTitle, donationAmount, donationBudget) => {
-    event.preventDefault()
-    setDonationAmount(donationAmount)
-    if (donationAmount > 0) {
-      setDonationBudget(true)
-    } else {
-      setDonationBudget(false)
-    }
-    fetch(`http://localhost:8081/users/${userId}`, {
-      method: "PUT",
-      body: JSON.stringify({ userId, projectId, projectTitle, donationAmount, donationBudget }),
-      headers: { "Content-Type": "application/json", "Authorization": accessToken}
-    })
-  }
 
 
   return (
@@ -211,6 +196,21 @@ export const CharityDetail = () => {
 }
 
 
+  // Function that is invoced when the user clicks on a donation button
+  // const handleDonation = (event, userId, projectId, projectTitle, donationAmount, donationBudget) => {
+  //   event.preventDefault()
+  //   setDonationAmount(donationAmount)
+  //   if (donationAmount > 0) {
+  //     setDonationBudget(true)
+  //   } else {
+  //     setDonationBudget(false)
+  //   }
+  //   fetch(`http://localhost:8081/users/${userId}`, {
+  //     method: "PUT",
+  //     body: JSON.stringify({ userId, projectId, projectTitle, donationAmount, donationBudget }),
+  //     headers: { "Content-Type": "application/json", "Authorization": accessToken}
+  //   })
+  // }
 
 
 // <div>

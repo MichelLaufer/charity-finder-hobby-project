@@ -80,7 +80,7 @@ export const UserFavorites = () => {
     // Favorites
     <>
       <div className="wrapper-box">
-        {errorMessage && <div>{errorMessage}</div>}
+        {errorMessage && <div className="error-message-favorites">You need to login to view this page!</div>}
         {!errorMessage && <div className="your-favorites">Your favorite charity projects</div>}
         {projectStatus && !projectStatus.message && (
           projectStatus.map((project) => (
@@ -94,7 +94,6 @@ export const UserFavorites = () => {
       </div>
 
       <div className="wrapper-box">
-        {errorMessage && <div>{errorMessage}</div>}
         {!errorMessage && <div className="your-favorites">Charity projects added to budget</div>}
         {donationBudget && !donationBudget.message && (
           donationBudget.map((charity) => (
@@ -106,10 +105,12 @@ export const UserFavorites = () => {
         <div className="error-message">No projects added to your budget</div>
       )}
 
+      {!errorMessage && 
       <div>
         <BudgetGet />
         <BudgetForm />
       </div>
+      }
       </div>
       
     </>

@@ -75,7 +75,9 @@ export const CharityCards = ({ id }) => {
           />
         </Link>
         <div className="wrap-charity-card-info">
-          <div className="charity-card-title">{project.title}</div>
+          <Link key={project.id} to={`/charities/${project.id}`}>
+            <div className="charity-card-title">{project.title}</div>
+          </Link>
           <FavoriteStatus 
             projectId={project.id}
             projectTitle={project.title}

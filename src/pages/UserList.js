@@ -22,6 +22,9 @@ export const UserList = () => {
       <div className="userlist-title">
         Other Users
       </div>
+      {!userId && 
+      <div>You need to login to view the user list!</div>
+      }
       {userList.map((user) => (
         userId !== user._id &&
         <div className="userlist-names">
