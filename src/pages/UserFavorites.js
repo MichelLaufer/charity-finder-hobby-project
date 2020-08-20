@@ -14,7 +14,8 @@ export const UserFavorites = () => {
   const [error, setError] = useState("")
   const [errorMessage, setErrorMessage] = useState("")
   const [projectStatus, setProjectStatus] = useState()
-  const [donationBudget, setDonationBudget] = useState()
+  const [donationBudget, setDonationBudget] = useState([])
+  const budget = useSelector((state) => state.users.userBudget)
 
   const accessToken = useSelector((state) => state.users.accessToken)
   const userId = useSelector((state) => state.users.userId)
@@ -58,7 +59,7 @@ export const UserFavorites = () => {
    // Charities with a positive donation amount
    useEffect(() => {
     if (!userId) return;
-    fetch(`http://localhost:8081/users/${userId}/charities?donationBudget=true`)
+    fetch(`http://localhost:8081/users/${userId}/donations`)
       .then(res => res.json())
       .then(json => {
         setDonationBudget(json)
@@ -75,6 +76,8 @@ export const UserFavorites = () => {
       })
   },[])
 
+  const usedBudget = donationBudget.reduce((acc, cur) => acc + cur.donationAmount, 0)
+  const remainingBudget = budget - usedBudget
   
   return (
     // Favorites
@@ -108,6 +111,7 @@ export const UserFavorites = () => {
       {!errorMessage && 
       <div>
         <BudgetGet />
+        <p>Your remaining budget is {remainingBudget} EUR</p>
         <BudgetForm />
       </div>
       }
