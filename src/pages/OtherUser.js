@@ -32,5 +32,3 @@ export const OtherUser = () => {
     </div>
   )
 }
-
-// <div className="otheruser-title">Charities that {userName} has added as favorites</div>

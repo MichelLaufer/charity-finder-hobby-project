@@ -22,7 +22,7 @@ export const Navbar = () => {
         <Searchbar />
 
         <div className="navright-container">
-          <div className="username-nav">{userName}</div>
+          <Link to={`/myfavorites`}><div className="username-nav">{userName}</div></Link>
           {!accessToken && 
             <PopoverLogin />
           }

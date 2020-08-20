@@ -15,7 +15,6 @@ import { UserList } from './pages/UserList'
 import { Navbar } from './components/Navbar'
 import { OtherUser } from './pages/OtherUser'
 import { Registration } from './pages/Registration'
-// import { SearchProjects } from './pages/SearchProjects'
 
 const reducer = combineReducers({
   charities: charities.reducer,

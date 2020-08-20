@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
-// const url = "https://localhost:8080/users"
-
 export const Registration = () => {
   const [name, setName] = useState("")
   const [password, setPassword] = useState("")

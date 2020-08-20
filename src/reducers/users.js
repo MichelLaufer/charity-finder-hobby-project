@@ -78,15 +78,3 @@ export const fetchUser = ({ email, password }) => {
       .catch(err => dispatch(ui.actions.setLoginFailed(true)))
   }
 }
-
-
-// Takes searchterm as a prop/argument and send search result to MoveList.js. 
-// export const searchResult = (userName) => {
-//   return dispatch => {
-//     fetch(`localhost:8080/users/:userId/allUsers?name=${userName}`)
-//       .then(res => res.json())
-//       .then(json => {
-//         dispatch(users.actions.setUser(json))
-//       })
-//   }
-// }

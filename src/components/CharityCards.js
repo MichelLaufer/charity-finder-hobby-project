@@ -36,7 +36,6 @@ export const CharityCards = ({ id }) => {
         {json.project && (
         setImage(json.project.image.imagelink[2])
         )}
-        // setOrganization(json.project.organization)
       })  
   }, [id])
 
@@ -47,16 +46,6 @@ export const CharityCards = ({ id }) => {
     )
   }
 
-     // Get a project's donation budget amount
-    //  useEffect(() => {
-    //   if (!userId) return;
-    //   fetch(`http://localhost:8081/users/${userId}/charities?donationAmount`)
-    //     .then(res => res.json())
-    //     .then(json => {
-    //       setDonationBudget(json)
-    //       console.log("donation budget:", json)
-    //     })
-    // }, [])
 
   if (!project) return null; 
   console.log(project)
@@ -91,8 +80,3 @@ export const CharityCards = ({ id }) => {
     </div>
   )
 }
-
-
-// <DonationAmount 
-//   projectId={project.id}
-// />

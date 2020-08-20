@@ -8,7 +8,8 @@ import { fetchUser } from '../reducers/users.js'
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles(theme => ({
-  typography: {
+  typography: 
+  {
     padding: theme.spacing(2)
   }
 }))

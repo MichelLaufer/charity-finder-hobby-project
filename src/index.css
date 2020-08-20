@@ -566,23 +566,6 @@ footer {
 
 
 /* Logout **********************************************/
-.signout-button {
-  background: inherit;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  display: none;
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.5em;
-  margin-left: 2vw;
-  text-transform: uppercase;
-}
-
-.signin-button:hover {
-  color:#fe5426;
-  transform: scale(1.2);
-}
-
 .logout-static-button {
   background: orange;
   border: none;
@@ -600,6 +583,29 @@ footer {
 .logout-static-button:hover {
   color: #343078;
 }
+
+.signout-button {
+  background: inherit;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5em;
+  margin-left: 2vw;
+  text-transform: uppercase;
+}
+
+.signout-button:hover {
+  color:#fe5426;
+  transform: scale(1.2);
+}
+
+.signin-button:hover {
+  color:#fe5426;
+  transform: scale(1.2);
+}
+
 
 
 /* Navbar *******************************************/

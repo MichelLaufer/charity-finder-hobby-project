@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { DropDownList } from './components/DropDownList'
-// import { DropDownCountries } from './components/DropDownCountries'
 import { ProgressBar } from './components/ProgressBar'
 
 const API_KEY = process.env.REACT_APP_API_KEY
@@ -14,9 +13,6 @@ export const CharityList = () => {
   const [loading, setLoading] = useState(true)
   const searchResult = useSelector(state => state.charities.charities)
   const category = useSelector(state => state.charities.chosenCategory)
-  // const country = useSelector(state => state.charities.chosenCountry)
-  // const url = useSelector(state => state.charities.url)
-  // const url = `https://api.globalgiving.org/api/public/projectservice/all/projects/active.json?api_key=${API_KEY}`
 
   const url = `https://api.globalgiving.org/api/public/projectservice/${category}/projects?api_key=${API_KEY}`
   const newhead = new Headers({
@@ -99,13 +95,3 @@ export const CharityList = () => {
     </section>
   )
 }
-
-
-// <img 
-//   className="project-img"
-//   src={charity.imageLink} 
-// />
-
-// <h3 className="org-name">by {charity.organization.name}</h3>
-
-// <ProgressBar percentage={`${charity.funding}/${charity.goal}`}/>

@@ -120,21 +120,3 @@ export const UserFavorites = () => {
     </>
   )
 }
-
-
-
-
-
-// useEffect(() => {
-//   if (!userId) return;
-//   fetch(`http://localhost:8081/users/${userId}/charities?donationAmount=true`)
-//     .then(res => res.json())
-//     .then(json => {
-//       if (json && json.donationAmount) {
-//         setDonationAmount(json.donationAmount)
-//         console.log("donation amount:", json)
-//       } else if (json && !json.donationAmount) {
-//         setDonationAmount("")
-//       }
-//     })
-// }, [])

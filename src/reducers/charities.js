@@ -5,7 +5,6 @@ const API_KEY = process.env.REACT_APP_API_KEY
 
 const initialState = {
   charities: [], 
-  // url: `https://api.globalgiving.org/api/public/projectservice/all/projects/active.json?api_key=${API_KEY}`,
   chosenCategory: "featured",
   chosenCountry: "AF"
 }
@@ -49,6 +48,3 @@ export const searchResult = (searchTerm) => {
       })
   }
 }
-
-
-// const url = `https://api.globalgiving.org/api/public/services/search/projects/active.json?api_key=${API_KEY}&q=${searchTerm}`

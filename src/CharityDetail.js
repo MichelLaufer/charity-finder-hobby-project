@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
 import { FavoriteStatus } from './components/FavoriteStatus'
 import { ProgressBar } from './components/ProgressBar'
 import { DonationSend } from 'components/DonationSend'
@@ -19,10 +18,6 @@ export const CharityDetail = () => {
  
   const [projectId, setProjectId] = useState()
   const [projectTitle, setProjectTitle] = useState()
-  // const [donationAmount, setDonationAmount] = useState() 
-  // const [donationBudget, setDonationBudget] = useState()
-  // const accessToken = useSelector((state) => state.users.accessToken)
-  // const userId = useSelector((state) => state.users.userId)
 
   const url = `https://api.globalgiving.org/api/public/projectservice/projects/${id}?api_key=${API_KEY}`
   const newhead = new Headers({
@@ -194,72 +189,3 @@ export const CharityDetail = () => {
     </div>
   )
 }
-
-
-  // Function that is invoced when the user clicks on a donation button
-  // const handleDonation = (event, userId, projectId, projectTitle, donationAmount, donationBudget) => {
-  //   event.preventDefault()
-  //   setDonationAmount(donationAmount)
-  //   if (donationAmount > 0) {
-  //     setDonationBudget(true)
-  //   } else {
-  //     setDonationBudget(false)
-  //   }
-  //   fetch(`http://localhost:8081/users/${userId}`, {
-  //     method: "PUT",
-  //     body: JSON.stringify({ userId, projectId, projectTitle, donationAmount, donationBudget }),
-  //     headers: { "Content-Type": "application/json", "Authorization": accessToken}
-  //   })
-  // }
-
-
-// <div>
-// <form className="donation-amount-form">
-//   <label className="donation-amount-label">
-//   <input
-//     className="donation-amount-input"
-//     type="text"
-//     value={donationAmount}
-//     onChange={event => setDonationAmount(event.target.value)}
-//     placeholder="Enter amount here (in EUR)..."
-//   />
-//   <button 
-//     className="button-budget"
-//     disabled={!accessToken}
-//     onClick={(event) => handleDonation(userId, project.id, project.title, donationAmount, donationBudget)}
-//   >
-//     Add to budget
-//   </button>
-//   </label>
-// </form>
-// </div>
-
-
-
-
-// <button className="favorites-button">Add to favorites</button>
-
-// <FavoriteStatus projectId={charity.id} projectTitle={charity.title} />
-
-// <button className="donation-button">DONATE</button>
-
-    // <img 
-    //   src={charity.image.imagelink[2]}
-    // />
-
-    // const url = `https://api.globalgiving.org/api/public/projectservice/projects/${id}?api_key=${API_KEY}`
-    // const newhead = new Headers({
-    //   'Access-Control-Allow-Origin': '*'
-    // })
-    // newhead.append('Accept', 'application/json')
-
-    // {images.map((image) => (
-    //   <div key={id}>
-    //     <img src={image.url} />
-    //   </div>
-    // ))}
-
-    // <img 
-    //   className="project-img"
-    //   src={charity.imageLink} 
-    // />
