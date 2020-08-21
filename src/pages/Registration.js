@@ -9,12 +9,22 @@ export const Registration = () => {
   const [failure, setFailure] = useState(false)
   const history = useHistory()
 
+  const url = "https://charity-finder-backend.herokuapp.com/users"
+  const newhead = new Headers({
+    'Accept': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type'
+  })
+
+  let req = new Request(url, {
+    method: 'POST',
+    headers: newhead
+  })
+
   const handleSubmit = event => {
     event.preventDefault();
-    fetch("https://charity-finder-backend.herokuapp.com/users", {
-      method: "POST",
-      body: JSON.stringify({ name, email, password }),
-      headers: { "Content-Type": "application/json" }
+    fetch(req, {
+      body: JSON.stringify({ name, email, password })
     })
       .then(res => {
         if (res.status !== 201) {
