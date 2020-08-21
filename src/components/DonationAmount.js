@@ -10,7 +10,7 @@ export const DonationAmount = ({ projectId }) => {
   // Get a project's donation amount
   useEffect(() => {
     if (!userId || !projectId) return;
-    fetch(`http://localhost:8081/users/${userId}/charities?projectId=${projectId}`)
+    fetch(`https://charity-finder-backend.herokuapp.com/users/${userId}/charities?projectId=${projectId}`)
       .then(res => res.json())
       .then(json => {
         if (json && json.donationAmount > 0) {

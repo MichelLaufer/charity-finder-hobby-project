@@ -11,7 +11,7 @@ export const BudgetForm = () => {
 
   const handleBudget = (e) => {
     e.preventDefault()
-    fetch(`http://localhost:8081/users/${userId}`, {
+    fetch(`https://charity-finder-backend.herokuapp.com/users/${userId}`, {
       method: "PUT",
       body: JSON.stringify({ userId, budget }),
       headers: { "Content-Type": "application/json", "Authorization": accessToken}

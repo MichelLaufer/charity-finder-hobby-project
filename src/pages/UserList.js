@@ -9,7 +9,7 @@ export const UserList = () => {
   // All users
   useEffect(() => {
     if (!userId) return 
-    fetch(`http://localhost:8081/users`)
+    fetch(`https://charity-finder-backend.herokuapp.com/users`)
       .then(res => res.json())
       .then(json => {
         setUserList(json)

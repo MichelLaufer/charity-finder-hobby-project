@@ -10,7 +10,7 @@ export const FavoriteStatus = ({ projectId, projectTitle }) => {
   // Function that is invoced when the user clicks on Add or remove from Favorites
   const handleFavoriteStatus = (userId, projectTitle, favoriteStatus) => {
     setFavoriteStatus(favoriteStatus)
-    fetch(`http://localhost:8081/users/${userId}`, {
+    fetch(`https://charity-finder-backend.herokuapp.com/users/${userId}`, {
       method: "PUT",
       body: JSON.stringify({ userId, projectId, projectTitle, favoriteStatus }),
       headers: { "Content-Type": "application/json", "Authorization": accessToken}
@@ -20,7 +20,7 @@ export const FavoriteStatus = ({ projectId, projectTitle }) => {
   // Get a project's favorite status
   useEffect(() => {
     if (!userId || !projectId) return;
-    fetch(`http://localhost:8081/users/${userId}/charities?projectId=${projectId}`)
+    fetch(`https://charity-finder-backend.herokuapp.com/users/${userId}/charities?projectId=${projectId}`)
       .then(res => res.json())
       .then(json => {
         if (json && json.favoriteStatus) {

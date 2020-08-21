@@ -11,7 +11,7 @@ export const Registration = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    fetch("http://localhost:8081/users", {
+    fetch("https://charity-finder-backend.herokuapp.com/users", {
       method: "POST",
       body: JSON.stringify({ name, email, password }),
       headers: { "Content-Type": "application/json" }

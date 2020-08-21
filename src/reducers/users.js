@@ -48,7 +48,7 @@ export const users = createSlice({
 })
 
 
-const url = 'http://localhost:8081/sessions'
+const url = 'https://charity-finder-backend.herokuapp.com/sessions'
 
 
 export const fetchUser = ({ email, password }) => {

@@ -10,7 +10,7 @@ export const DonationBudget = ({ projectId, projectTitle, donationOption, donati
   // Function that is invoced when the user clicks on a donation button
   const handleDonation = (userId, projectTitle, donationAmount) => {
     setDonationAmount(donationAmount)
-    fetch(`http://localhost:8081/users/${userId}`, {
+    fetch(`https://charity-finder-backend.herokuapp.com/users/${userId}`, {
       method: "PUT",
       body: JSON.stringify({ userId, projectId, projectTitle, donationAmount }),
       headers: { "Content-Type": "application/json", "Authorization": accessToken}

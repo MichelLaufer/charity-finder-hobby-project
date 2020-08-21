@@ -5,7 +5,7 @@ import { BudgetForm } from '../components/BudgetForm'
 import { BudgetGet } from '../components/BudgetGet'
 import { users } from '../reducers/users'
 
-const url = "http://localhost:8081/secrets"
+const url = "https://charity-finder-backend.herokuapp.com/secrets"
 
 
 export const UserFavorites = () => {
@@ -49,7 +49,7 @@ export const UserFavorites = () => {
   // Charities added to favorites
   useEffect(() => {
     if(!userId) return
-    fetch(`http://localhost:8081/users/${userId}/charities?favoriteStatus=true`)
+    fetch(`https://charity-finder-backend.herokuapp.com/users/${userId}/charities?favoriteStatus=true`)
       .then(res => res.json())
       .then(json => {
         setProjectStatus(json)
@@ -60,7 +60,7 @@ export const UserFavorites = () => {
    // Charities with a positive donation amount
    useEffect(() => {
     if (!userId) return;
-    fetch(`http://localhost:8081/users/${userId}/donations`)
+    fetch(`https://charity-finder-backend.herokuapp.com/users/${userId}/donations`)
       .then(res => res.json())
       .then(json => {
         setDonationBudget(json)
@@ -70,7 +70,7 @@ export const UserFavorites = () => {
 
   // Get a user's budget
   useEffect(() => {
-    fetch (`http://localhost:8081/users/${userId}/budget`)
+    fetch (`https://charity-finder-backend.herokuapp.com/users/${userId}/budget`)
       .then(res => res.json())
       .then(budget => {
         dispatch(users.actions.setUserBudget(budget))

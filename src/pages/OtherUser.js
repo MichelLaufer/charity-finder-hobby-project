@@ -9,7 +9,7 @@ export const OtherUser = () => {
   const { userId } = useParams()
 
   useEffect(() => {
-    fetch(`http://localhost:8081/users/${userId}/otherUser`)
+    fetch(`https://charity-finder-backend.herokuapp.com/users/${userId}/otherUser`)
       .then(res => res.json())
       .then(json => {
         setAddedFavorites(json.otherUser)
