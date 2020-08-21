@@ -14,7 +14,7 @@ export const Registration = () => {
     fetch("https://charity-finder-backend.herokuapp.com/users", {
       method: "POST",
       body: JSON.stringify({ name, email, password }),
-      headers: { "Content-Type": "application/json", 'Access-Control-Allow-Origin': '*' }
+      headers: { "Content-Type": "application/json" }
     })
       .then(res => {
         if (res.status !== 201) {
