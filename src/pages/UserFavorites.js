@@ -37,6 +37,7 @@ export const UserFavorites = () => {
       })
       .then(json => {
         setMessage(json.secret)
+        console.log(message)
         setErrorMessage("")
       })
       .catch(err => {
@@ -111,7 +112,7 @@ export const UserFavorites = () => {
       {!errorMessage && 
       <div>
         <BudgetGet />
-        <p>Your remaining budget is {remainingBudget} EUR</p>
+        <p className="budget-remaining">Your remaining budget is <span className="budget-remaining-highlight">{remainingBudget} EUR</span></p>
         <BudgetForm />
       </div>
       }

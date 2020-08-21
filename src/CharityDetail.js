@@ -15,9 +15,6 @@ export const CharityDetail = () => {
   const [imageGallery, setImageGallery] = useState([])
   const [loading, setLoading] = useState(true)
   const [organization, setOrganization] = useState([])
- 
-  const [projectId, setProjectId] = useState()
-  const [projectTitle, setProjectTitle] = useState()
 
   const url = `https://api.globalgiving.org/api/public/projectservice/projects/${id}?api_key=${API_KEY}`
   const newhead = new Headers({
@@ -40,8 +37,6 @@ export const CharityDetail = () => {
       .then((json) => {
         setLoading(false)
         setProject(json.project)
-        setProjectId(json.project.id)
-        setProjectTitle(json.project.title)
         setDonationOptions(json.project.donationOptions.donationOption)
         setImage(json.project.image.imagelink[3])
         setOrganization(json.project.organization)
@@ -78,7 +73,6 @@ export const CharityDetail = () => {
       <div className="loading-message">Charity page is loading...</div>
     )
   }
-
 
 
   return (

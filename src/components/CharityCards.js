@@ -10,8 +10,6 @@ export const CharityCards = ({ id }) => {
   const [project, setProject] = useState({})
   const [image, setImage] = useState([])
   const [loading, setLoading] = useState("")
-  const [organization, setOrganization] = useState([])
-
 
   const url = `https://api.globalgiving.org/api/public/projectservice/projects/${id}?api_key=${API_KEY}`
   const newhead = new Headers({

@@ -39,7 +39,7 @@ export const FavoriteStatus = ({ projectId, projectTitle }) => {
           disabled={!accessToken}
           onClick={() => handleFavoriteStatus(userId, projectTitle, !favoriteStatus)}
         >
-          {favoriteStatus ? "Remove from favorites" : "Add to favorites"}
+          {favoriteStatus ? "Remove from my favorites" : "Add to my favorites"}
         </button>
       </div>
     </>

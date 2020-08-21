@@ -6,20 +6,13 @@ export const DonationSend = ({ projectId, projectTitle }) => {
   const accessToken = useSelector((state) => state.users.accessToken)
   const userId = useSelector((state) => state.users.userId)
   const [donationAmount, setDonationAmount] = useState(null)
-  const [donationBudget, setDonationBudget] = useState(false)
 
   // Function that is invoced when the user clicks on a donation button
-  const handleDonation = (userId, projectId, projectTitle, donationAmount, donationBudget) => {
-    // event.preventDefault()
+  const handleDonation = (userId, projectId, projectTitle, donationAmount) => {
     setDonationAmount(donationAmount)
-    if (donationAmount > 0) {
-      setDonationBudget(true)
-    } else {
-      setDonationBudget(false)
-    }
     fetch(`http://localhost:8081/users/${userId}`, {
       method: "PUT",
-      body: JSON.stringify({ userId, projectId, projectTitle, donationAmount, donationBudget }),
+      body: JSON.stringify({ userId, projectId, projectTitle, donationAmount}),
       headers: { "Content-Type": "application/json", "Authorization": accessToken}
     })
     console.log("Donation amount:", donationAmount)
@@ -42,7 +35,7 @@ export const DonationSend = ({ projectId, projectTitle }) => {
           className="button-budget"
           type="submit"
           disabled={!accessToken}
-          onClick={() => handleDonation(userId, projectId, projectTitle, donationAmount, donationBudget)}
+          onClick={() => handleDonation(userId, projectId, projectTitle, donationAmount)}
         >
           Add to budget
         </button>

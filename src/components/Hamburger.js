@@ -7,7 +7,6 @@ import { ui } from '../reducers/ui'
 import styled from 'styled-components/macro'
 
 
-
 export const Menu = ({ open, setOpen }) => {
   const dispatch = useDispatch()
   const handleTabChange = (tab) => {

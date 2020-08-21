@@ -10,7 +10,7 @@ export const BudgetGet = () => {
 
   return (
     <div className="budget-total">
-      Your total budget is currently <span className="budget-total-highlight">{budget} EUR</span>
+      Your total budget is <span className="budget-total-highlight">{budget} EUR</span>
     </div>
   )
 }

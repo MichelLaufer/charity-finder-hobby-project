@@ -184,9 +184,6 @@ a {
   margin-top: 0;
   max-width: 300px;
   padding: 0;
-  /* @media(max-width: 500px) {
-   max-width: 35vh;
-  } */
 }
 
 .donation-amount-input {
@@ -197,19 +194,6 @@ a {
   margin: 8px 0;
   padding: 0 10px;
   width: 90%;
-  /* background: transparent;
-  border: none;
-  border: 1px solid transparent;
-  border-bottom: 1px solid black;
-  border-radius: 3px;
-  color: #333;
-  display: block;
-  font-size: 15px;
-  line-height: 50px;
-  margin: 10px 0px;
-  padding: 0 10px;
-  width: 90%;
-  z-index: 2; */
 }
 
 .donation-amount-label {
@@ -226,15 +210,6 @@ a {
 
 .gallery-image {
   max-width: 75vw;
-}
-
-.hero-image {
-  background-image: url("/assets/unsplash_image.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 50%;
-  position: relative;
 }
 
 .image-gallery {
@@ -433,9 +408,6 @@ a {
 
 /* DropDownList.js *************************************************/
 .category-dropdown label {
-  /* align-items: center;
-  display: flex;
-  justify-content: flex-end; */
   margin: 10px;
 }
 
@@ -444,7 +416,7 @@ a {
   font-family: bavroregular;
   margin: 5px;
 }
-/* STYLE SECTION DROPDOWN */
+
 .select-css {
   appearance: none;
   background-color: #fff;
@@ -488,7 +460,7 @@ a {
   outline: none;
 }
 .select-css option {
-  font-weight:normal;
+  font-weight: normal;
 }
 /* Support for rtl text, explicit support for Arabic and Hebrew.*/
 *[dir="rtl"] .select-css, :root:lang(ar) .select-css, :root:lang(iw) .select-css {
@@ -522,7 +494,7 @@ a {
   margin-right: 6vw;
   margin-top: 5vh;
   padding: 14px 20px;
-  width: 220px;
+  width: 230px;
 }
 
 
@@ -738,9 +710,6 @@ form {
   margin: 60px auto;
   max-width: 480px;
   padding: 20px 30px 30px 30px;
-  /* @media(max-width: 500px) {
-   max-width: 35vh;
-  } */
 }
 
 .heading {
@@ -764,14 +733,8 @@ input {
   line-height: 54px;
   margin: 10px 0px;
   padding: 0 10px;
-  /* transition: border-color $standard-transition; */
   width: 100%;
   z-index: 2;
-  /* &:focus, &:active {
-    border-bottom: 2px solid black;
-    border-color: #ededed;
-    outline: none;
-  } */
 }
 
 label {
@@ -812,8 +775,24 @@ label {
 
 
 /* User Favorites *********************************************/
+.budget-remaining {
+  background: white;
+  border-radius: 8px;
+  display: block;
+  font-size: 22px;
+  margin: 60px auto;
+  margin-bottom: 3vh;
+  margin-top: 0;
+  max-width: 400px;
+  padding: 0;
+}
+
+.budget-remaining-highlight {
+  font-weight: bold;
+}
+
 .error-message {
- margin-left: 3vw; 
+  margin-left: 3vw; 
 }
 
 .error-message-favorites {
@@ -864,6 +843,7 @@ label {
   height: 200px;
   width: 350px;
 }
+
 .favorite-charity-card {
   height: 200px;
   margin: 10px;
@@ -871,6 +851,7 @@ label {
   margin-left: 3vw;
   width: 60vw;
 }
+
 .wrap-charity-card {
   flex-direction: row;
 }
@@ -881,12 +862,15 @@ label {
   margin-left: 4vw;
   width: 30vw;
 }
+
 .donation-options-button {
   cursor: pointer;
 }
+
 .donation-wrap {
   margin-left: 0;
 }
+
 .image-gallery {
   margin-bottom: 3vh;
   margin-left: 0;
@@ -894,57 +878,70 @@ label {
   padding-right: 2vw;
   width: 55vw;
 }
+
 .image-gallery-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   padding-top: 2vh;
 }
+
 .image-gallery-item {
   padding-bottom: 2vh;
   width: 50%;
 }
+
 .img-and-donation-container {
   display: flex;
   margin-left: 0;
 }
+
 .info-and-usage-wrap {
   display: flex;
   flex-direction: row;
 }
+
 .info-container {
   margin-left: 0;
   width: 40vw;
 }
+
 .links-container {
   margin-left: 4vw;
   width: 30vw;
 }
+
 .organization-container {
   margin-left: 0;
   width: 40vw;
 }
+
 .project-detail-background {
   margin-left: 5vw;
   margin-right: 5vw;
   margin-top: 3vh;
   width: 80vw;
 }
+
 .project-detail-container {
   display: flex;
   flex-direction: row;
 }
+
 .project-detail-org-name {
   margin-left: 20vw;
 }
+
 .project-detail-title {
   font-size: 26px; 
   margin-left: 20vw;
 }
+
 .project-img {
   margin-left: 0;
   width: 42vw;
 }
+
 .usage-container {
   margin-left: 4vw;
   width: 30vw;
@@ -957,6 +954,7 @@ label {
   margin-bottom: 8vh;
   width: 30vw;
 }
+
 .charity-list {
   display: grid;
   grid-template-columns: repeat(3,3fr);
@@ -965,10 +963,12 @@ label {
   margin-left: 3vw;
   padding-left: 0;
 }
+
 .charity-list-img {
   max-height: 40vh;
   width: 30vw;
 }
+
 .charity-list-top-wrapper {
   display: flex;
   flex-direction: row;
@@ -1010,18 +1010,22 @@ label {
   justify-content: space-between;
   padding-left: 15px;
 }
+
 .navbar-header-title {
   margin-left: 1vw;
 }
+
 .navright-container {
   display: flex;  
   margin-right: 10px;
   padding: 0;
 }
+
 .subnavbar {
   align-items: center;
   height: 50px;
 }
+
 .subnavbar-item {
   display: inline-block;
 }

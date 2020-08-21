@@ -5,8 +5,7 @@ const API_KEY = process.env.REACT_APP_API_KEY
 
 const initialState = {
   charities: [], 
-  chosenCategory: "featured",
-  chosenCountry: "AF"
+  chosenCategory: "featured"
 }
 
 export const charities = createSlice({
@@ -18,9 +17,6 @@ export const charities = createSlice({
     },
     setCategory: (state, action) => {
       state.chosenCategory = action.payload
-    },
-    setCountry: (state, action) => {
-      state.chosenCountry = action.payload
     }
   }
 })
