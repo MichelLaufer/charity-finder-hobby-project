@@ -16,6 +16,7 @@ export const DonationSend = ({ projectId, projectTitle }) => {
       headers: { "Content-Type": "application/json", "Authorization": accessToken}
     })
     console.log("Donation amount:", donationAmount)
+    setDonationAmount("")
   }
 
 
@@ -35,7 +36,9 @@ export const DonationSend = ({ projectId, projectTitle }) => {
           className="button-budget"
           type="submit"
           disabled={!accessToken}
-          onClick={() => handleDonation(userId, projectId, projectTitle, donationAmount)}
+          onClick={(e) => {
+            e.preventDefault()
+            handleDonation(userId, projectId, projectTitle, donationAmount)}}
         >
           Add to budget
         </button>
