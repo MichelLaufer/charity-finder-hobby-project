@@ -21,6 +21,7 @@ Backend:
 * Mongoose
 * Mongo Atlas
 * bcrypt/crypto
+* Backend repo: https://github.com/MichelLaufer/charity-finder-backend
 
 ## Deployed project
 Link to deployed project: https://michel-charity-finder.netlify.app/
